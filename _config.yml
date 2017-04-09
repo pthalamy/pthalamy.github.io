@@ -1,18 +1,31 @@
 # Site settings
 title: Pierre Thalamy
 email: pierre.thalamy@gmail.com
+description: Software Engineer. Freethinker. Explorer.
+baseurl: "/homepage" # the subpath of your site, e.g. /blog
+url: "pthalamy.github.io" # the base hostname & protocol for your site
+author: Pierre Thalamy
+street_address: 
+city: Antibes
+state: 
+zip_code: 06410
+country: France
+phone: +33(0)627930799
 
-# Write an awesome description for your new site here. You can edit this
-# line in _config.yml. It will appear in your document head meta (for
-# Google search results) and in your feed.xml site description.
+icon: fa-user-cirle # Font Awesome class for your site's icon
+profile_pic: profile.jpg
 
-description: > # this means to ignore newlines until "baseurl:"
-             Welcome to my personal website, now under construction. In the near future, I plan
-              to populate this website with information about my projects and interests.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://pthalamy.github.io" # the base hostname & protocol for your site
-twitter_username: pthalamy
-github_username:  pthalamy
+# Social settings
+facebook_url: https://www.facebook.com/pithalamy
+github_url: https://github.com/pthalamy
+gitlab_url: 
+googleplus_url: 
+instagram_url: https://www.instagram.com/pthalamy/
+linkedin_url: https://www.linkedin.com/in/pthalamy
+pinterest_url:
+slack_url: 
+twitter_url: https://twitter.com/pthalamy
+amazonwishlist_url: https://www.amazon.fr/registry/wishlist/1D1AP2U10RNO6/ref=cm_sw_r_cp_ep_ws_QiP6ybYPTT5Z1?reveal=all&view=null
 
 # Build settings
 markdown: kramdown
