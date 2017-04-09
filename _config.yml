@@ -2,7 +2,7 @@
 title: Pierre Thalamy
 email: pierre.thalamy@gmail.com
 description: Software Engineer. Freethinker. Explorer.
-baseurl: "/homepage" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "pthalamy.github.io" # the base hostname & protocol for your site
 author: Pierre Thalamy
 street_address: 
