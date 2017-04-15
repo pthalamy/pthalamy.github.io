@@ -29,3 +29,7 @@ amazonwishlist_url: https://www.amazon.fr/registry/wishlist/1D1AP2U10RNO6/ref=cm
 
 # Build settings
 markdown: kramdown
+
+# Search Engines
+gems:
+  - jekyll-seo-tag
