@@ -37,16 +37,11 @@
 		</div>
 		<nav>
 			<ul>
-				<!-- Need to add percent-bracket to re-enable procedural code -->
-				<!-- for page in site.pages -->
-				<!-- unless page.layout == 'default' -->
-				<!--<li><a href="#{{ page.title }}">{{ page.title }}</a></li>-->
-				<!--<li><a href="#intro">Intro</a></li>
-				<li><a href="#work">Work</a></li>-->
-				<li><a href="#contact">Contact</a></li>
-				<!--<li><a href="#about">About</a></li>-->
-				<!-- endunless  -->
-				<!-- endfor -->
+				{% for page in site.pages  %}
+				{% unless page.layout == 'default' %} 
+				<li><a href="#{{ page.title }}">{{ page.title }}</a></li>
+				{% endunless %}  
+				{% endfor %}
 			</ul>
 		</nav>
 	</header>
