@@ -1,6 +1,6 @@
 ---
 title: elements
-layout: default
+published: false
 ---
 
 <section>

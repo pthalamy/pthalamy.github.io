@@ -33,3 +33,4 @@ markdown: kramdown
 # Search Engines
 gems:
   - jekyll-seo-tag
+  - github-pages

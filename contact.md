@@ -1,5 +1,6 @@
 ---
 title: contact
+published: true
 ---
 
 <form action="https://formspree.io/{{ site.email }}" method="POST">

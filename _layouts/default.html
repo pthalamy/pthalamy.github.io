@@ -13,7 +13,7 @@
 {% include header.html %}
 
 {% for page in site.pages  %}
-{% unless page.layout == 'default' %}
+{% unless page.published == false %}
 
 <!-- {{ page.title }} -->
 <article id="{{ page.title }}">
