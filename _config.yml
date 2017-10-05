@@ -1,7 +1,7 @@
 # Site settings
 title: Pierre Thalamy
 email: pierre.thalamy@gmail.com
-description: Software Engineer. Freethinker. Life-Enthusiast.
+description: Computer Science PhD Student at CNRS Institute Femto-ST
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "pthalamy.github.io" # the base hostname & protocol for your site
 author: Pierre Thalamy
