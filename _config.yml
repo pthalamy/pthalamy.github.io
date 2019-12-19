@@ -5,9 +5,9 @@ description: Computer Science PhD Student at CNRS Institute Femto-ST
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "pthalamy.github.io" # the base hostname & protocol for your site
 author: Pierre Thalamy
-street_address: 
+street_address:
 city: Antibes
-state: 
+state:
 zip_code: 06410
 country: France
 phone: +33(0)627930799
@@ -16,16 +16,16 @@ icon: fa-user-cirle # Font Awesome class for your site's icon
 profile_pic: profile.jpg
 
 # Social settings
-facebook_url: https://www.facebook.com/pithalamy
+#facebook_url: https://www.facebook.com/pithalamy
 github_url: https://github.com/pthalamy
-gitlab_url: 
-googleplus_url: 
-instagram_url: https://www.instagram.com/pthalamy/
+gitlab_url:
+googleplus_url:
+#instagram_url: https://www.instagram.com/pthalamy/
 linkedin_url: https://www.linkedin.com/in/pthalamy
 pinterest_url:
-slack_url: 
+slack_url:
 twitter_url: https://twitter.com/pthalamy
-amazonwishlist_url: https://www.amazon.fr/registry/wishlist/1D1AP2U10RNO6/ref=cm_sw_r_cp_ep_ws_QiP6ybYPTT5Z1?reveal=all&view=null
+#amazonwishlist_url: https://www.amazon.fr/registry/wishlist/1D1AP2U10RNO6/ref=cm_sw_r_cp_ep_ws_QiP6ybYPTT5Z1?reveal=all&view=null
 
 # Build settings
 markdown: kramdown
