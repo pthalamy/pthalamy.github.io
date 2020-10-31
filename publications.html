@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pierre Thalamy - Personal Page</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="node_modules/academicons/css/academicons.min.css"/>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+
+      <div id="navbarHome" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="index.html">
+            <i class="fa fa-fw fa-home"></i> Home
+          </a>
+
+          <a class="navbar-item is-active" href="#">
+            <i class="fas fa-fw fa-copy"></i> Publications
+          </a>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              <i class="fas fa-fw fa-file-pdf"></i> CV
+            </a>
+
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="./files/cv_pthalamy_052020_en-us.pdf"
+                 target="_blank">
+                English Version
+              </a>
+              <a class="navbar-item" href="./files/cv_pthalamy_052020_fr.pdf"
+                 target="_blank">
+                Version Française
+              </a>
+            </div>
+          </div>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              More
+            </a>
+
+            <div class="navbar-dropdown">
+              <a class="navbar-item">
+                About
+              </a>
+              <hr class="navbar-divider">
+              <a class="navbar-item modal-button" onClick="showContactModal()">
+                Contact
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="navbar-end">
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero is-primary is-bold is-small">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title">
+            Publications
+          </h1>
+          <h2 class="subtitle">
+            Research papers published in conferences and academic journals.
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications-list" class="is-primary is-medium">
+      <div class="container">
+
+        <div class="columns is-centered is-multiline">
+          <div class="column">
+            <div class="box">
+              <div class="columns">
+                <div class="column is-2-desktop">
+                  <figure class="image is-inline-block paper-thumbnail">
+                    <a href="./papers/phd_thesis.pdf" target="_blank">
+                      <img src="papers/thumbnails/phd_thesis.png"/>
+                    </a>
+                  </figure>
+                  <p class="buttons is-centered paper-buttons">
+                    <a class="button" title="Cite this thesis"
+                       onClick="showModal('cite-thesis-modal')">
+                      <span class="icon paper-icon">
+                        <i class="fas fa-quote-right" aria-hidden="true"></i>
+                      </span>
+                    </a>
+                    <a class="button" href="./papers/phd_thesis.pdf"
+                       download="thalamy_thesis_2020.pdf" target="_blank"
+                       title="Download">
+                      <span class="icon paper-icon">
+                        <i class="fas fa-download" aria-hidden="true"></i>
+                      </span>
+                    </a>
+                    <a class="button" title="doi:TBD" target="_blank" disabled>
+                      <span class="icon paper-icon">
+                        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                      </span>
+                    </a>
+                    <a class="button" title="Defense Replay" target="_blank" href="https://youtu.be/mNu0lyWhXHA">
+                      <span class="icon paper-icon">
+                        <i class="fab fa-youtube" aria-hidden="true"></i>
+                      </span>
+                    </a>
+                  </p>
+                </div>
+                <div class="column">
+                  <a disabled>
+                    <p class="title is-4 paper-title">Distributed Algorithms and Advanced Modeling Approaches for Fast and Efficient Object Construction Using a Modular Self-reconfigurable Robotic System</p>
+                  </a>
+                  <p class="subtitle is-5 paper-authors">Pierre Thalamy</p>
+                  <p class="paper-proc is-6">Ph.D. Thesis - University of Bourgogne Franche-Comté, FEMTO-ST Institute, CNRS (2020)</p>
+                  <p class="thesis-defense is-6">Defended in Montbéliard, France on <span style="font-weight: bold;">October, 9th 2020</span>.</p>
+                  <p class="thesis-jury is-6">
+                    <strong>Jury Members:</strong>
+                    <table class="table jury-members is-striped is-hoverable">
+                      <tbody>
+                        <tr>
+                          <td><a href="https://www.femto-st.fr/en/femto-people/nicolasandreff">Nicolas ANDREFF</a></td>
+                          <td>Professor</td>
+                          <td>University of Franche-Comté</td>
+                          <td>President</td>
+                        </tr>
+                        <tr>
+                          <td><a href="http://heikohamann.de/">Heiko HAMANN</a></td>
+                          <td>Professor</td> 
+                          <td>University of Lübeck</td>
+                          <td>Rapporteur</td>
+                        </tr>
+                        <tr>
+                          <td><a href="https://real.itu.dk/people/kasper-stoy/">Kasper STØY</a></td>
+                          <td>Professor</td> 
+                          <td>IT University of Copenhagen</td>
+                          <td>Rapporteur</td>
+                        </tr>
+                        <tr>
+                          <td><a href="https://people.epfl.ch/alcherio.martinoli?lang=en">Alcherio MARTINOLI</a></td>
+                          <td>Associate Professor</td> 
+                          <td>École Polytechnique Fédérale de Lausanne (EPFL)</td>
+                          <td>Examiner</td>
+                        </tr>
+                        <tr>
+                          <td><a href="https://www.femto-st.fr/en/femto-people/jbourgeo">Julien BOURGEOIS</a></td>
+                          <td>Professor</td> 
+                          <td>University of Franche-Comté</td>
+                          <td>Thesis director</td>
+                        </tr>
+                        <tr>
+                          <td><a href="https://www.femto-st.fr/en/femto-people/bpiranda">Benoît PIRANDA</a></td>
+                          <td>Associate Professor</td> 
+                          <td>University of Franche-Comté</td>
+                          <td>Thesis codirector</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </p>
+                  <p class="has-text-justified paper-abstract">
+                    Humans have always been on a quest to master their environment. But with the arrival of our digital age, an emerging technology now stands as the ultimate tool for that purpose: Programmable Matter. While any form of matter that can be programmed to autonomously react to a stimulus would fit that label, its most promising substrate resides in modular robotic systems. Such robotic systems are composed of interconnected, autonomous, and computationally simple modules that must coordinate through their motions and communications to achieve a complex common goal.<br>
+                    <br>
+                    Such programmable matter technology could be used to realize tangible and interactive 3D display systems that could revolutionize the ways in which we interact with the virtual world. Large-scale modular robotic systems with up to hundreds of thousands of modules can be used to form tangible shapes that can be rearranged at will. From an algorithmic point of view, however, this self-reconfiguration process is a formidable challenge due to the kinematic, communication, control, and time constraints imposed on the modules during this process.<br>
+                    <br>
+                    We argue in this thesis that there exist ways to accelerate the self-reconfiguration of programmable matter systems, and that a new class of reconfiguration methods with increased speed and specifically tailored to tangible display systems must emerge. We contend that such methods can be achieved by proposing a novel way of representing programmable matter objects, and by using a dedicated reconfiguration platform supporting self-reconfiguration.<br>
+                    <br>
+                    Therefore, we propose a framework to apply this novel approach on quasi-spherical modules arranged in a face-centered cubic lattice, and present algorithms to implement self-reconfiguration in this context. We analyze these algorithms and evaluate them on classes of shapes with increasing complexity, to show that our method enables previously unattainable reconfiguration times.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns is-centered is-multiline">
+          <div class="column">
+            <div class="box">
+              <div class="columns">
+                <div class="column is-2-desktop">
+                  <figure class="image is-inline-block paper-thumbnail">
+                    <a href="./papers/IROS20.pdf" target="_blank">
+                      <img src="papers/thumbnails/IROS20.png"/>
+                    </a>
+                  </figure>
+                  <p class="buttons is-centered paper-buttons">
+                    <a class="button" title="Cite this paper"
+                       onClick="showModal('cite-iros20-modal')">
+                      <span class="icon paper-icon">
+                        <i class="fas fa-quote-right" aria-hidden="true"></i>
+                      </span>
+                    </a>
+                    <a class="button" href="./papers/IROS20.pdf"
+                       download="thalamy_iros_2020.pdf" target="_blank"
+                       title="Download">
+                      <span class="icon paper-icon">
+                        <i class="fas fa-download" aria-hidden="true"></i>
+                      </span>
+                    </a>
+                    <a class="button" title="doi:TBD" target="_blank" disabled>
+                      <span class="icon paper-icon">
+                        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                      </span>
+                    </a>
+                  </p>
+                </div>
+                <div class="column">
+                  <a disabled>
+                    <p class="title is-4 paper-title">3D Coating Self-Assembly for Modular Robotic Scaffolds</p>
+                  </a>
+                  <p class="subtitle is-5 paper-authors">Pierre Thalamy, Benoît Piranda, and Julien Bourgeois</p>
+                  <p class="paper-proc subtitle is-6">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) (2020)</p>
+                  <p class="has-text-justified paper-abstract">
+                    This paper addresses the self-reconfiguration problem in large-scale modular robots for the purpose of shape formation for object representation. It aims to show that this process can be accelerated without compromising on the visual aspect of the final object, by creating an internal skeleton of the shape using the previously introduced sandboxing and scaffolding techniques, and then coating this skeleton with a layer of modules for higher visual fidelity.<br>
+<br>
+We discuss the challenges of the coating problem, introduce a basic method for constructing the coating of a scaffold layer by layer, and show that even with a straightforward algorithm, our scaffolding and coating combo uses much fewer modules than dense shapes and offers attractive reconfiguration times. Finally, we show that it could be a strong alternative to the construction of dense shapes using traditional self-reconfiguration algorithms.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="columns is-centered is-multiline">
+          <div class="column">
+            <div class="box">
+              <div class="columns">
+                <div class="column is-2-desktop">
+                  <figure class="image is-inline-block paper-thumbnail">
+                    <a href="./papers/SWEVO20.pdf" target="_blank">
+                      <img src="papers/thumbnails/SWEVO20.png"/>
+                    </a>
+                  </figure>
+                  <p class="buttons is-centered paper-buttons">
+                    <a class="button" title="Cite this paper"
+                       onClick="showModal('cite-swevo20-modal')">
+                      <span class="icon paper-icon">
+                        <i class="fas fa-quote-right" aria-hidden="true"></i>
+                      </span>
+                    </a>
+                    <a class="button" href="./papers/SWEVO20.pdf"
+                       download="thalamy_swevo_2020.pdf" target="_blank"
+                       title="Download">
+                      <span class="icon paper-icon">
+                        <i class="fas fa-download" aria-hidden="true"></i>
+                      </span>
+                    </a>
+                    <a class="button" title="doi:10.1016/j.swevo.2020.100722" 
+                       href="https://doi.org/10.1016/j.swevo.2020.100722" target="_blank">
+                      <span class="icon paper-icon">
+                        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                      </span>
+                    </a>
+                  </p>
+                </div>
+                <div class="column">
+                  <a disabled>
+                    <p class="title is-4 paper-title">Deterministic Scaffold Assembly By Self-Reconfiguring Micro-Robotic Swarms</p>
+                  </a>
+                  <p class="subtitle is-5 paper-authors">Pierre Thalamy, Benoît Piranda, Frédéric Lassabe, and Julien Bourgeois</p>
+                  <p class="paper-proc subtitle is-6">Swarm and Evolutionary Computation — Special Issue on: “Parallel/Distributed Combinatorics and Optimization” (2020)</p>
+                  <p class="has-text-justified paper-abstract">
+The self-reconfiguration of large swarms of modular robotic units from one object into another is an intricate problem whose critical parameter that must be optimized is the time required to perform a transformation. Various optimizations methods have been proposed to accelerate transformations, as well as techniques to engineer the shape itself, such as scaffolding which creates an internal object structure filled with holes for easing the motion of modules.
+In this paper, we propose a novel deterministic and distributed method for rapidly constructing the scaffold of an object from an organized reserve of modules placed underneath the reconfiguration scene. This innovative scaffold design is parameterizable and has a face-centered-cubic lattice structure made from our rotating-only micro-modules. Our method operates at two levels of planning, scheduling the construction of components of the scaffold to avoid deadlocks at one level, and handling the navigation of modules and their coordination to avoid collisions in the other.
+We provide an analysis of the method and perform simulations on shapes with an increasing level of intricacy to show that our method has a reconfiguration time complexity of $O(\sqrt[3]{N})$ time steps for a subclass of convex shapes, with $N$ the number of modules in the shape. We then proceed to explain how our solution can be further extended to any shape.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns is-centered is-multiline">
+          <div class="column">
+            <div class="box">
+              <div class="columns">
+                <div class="column is-2-desktop">
+                  <figure class="image is-inline-block paper-thumbnail">
+                    <a href="./papers/IROS19.pdf" target="_blank">
+                      <img src="papers/thumbnails/IROS19.png"/>
+                    </a>
+                  </figure>
+                  <p class="buttons is-centered paper-buttons">
+                    <a class="button" title="Cite this paper"
+                       onClick="showModal('cite-iros19-modal')">
+                      <span class="icon paper-icon">
+                        <i class="fas fa-quote-right" aria-hidden="true"></i>
+                      </span>
+                    </a>
+                    <a class="button" href="./papers/IROSS19.pdf"
+                       download="10.1109/IROS40897.2019.8967775.pdf" target="_blank"
+                       title="Download">
+                      <span class="icon paper-icon">
+                        <i class="fas fa-download" aria-hidden="true"></i>
+                      </span>
+                    </a>
+                    <a class="button" href="https://doi.org/10.1109/IROS40897.2019.8967775"
+                       title="doi:10.1109/IROS40897.2019.8967775" target="_blank">
+                      <span class="icon paper-icon">
+                        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                      </span>
+                    </a>
+                  </p>
+                </div>
+                <div class="column">
+                  <!-- Thalamy, P., B. Piranda, F. Lassabe, and J. Bourgeois. “Scaffold-Based Asynchronous Distributed Self-Reconfiguration By Continuous Module Flow.” In 2019 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 4840–46, 2019. https://doi.org/10.1109/IROS40897.2019.8967775. -->
+
+                  <a href="https://doi.org/10.1109/IROS40897.2019.8967775" target="_blank">
+                    <p class="title is-4 paper-title">Scaffold-Based Asynchronous Distributed Self-Reconfiguration By Continuous Module Flow</p>
+                  </a>
+                  <p class="subtitle is-5 paper-authors">Pierre Thalamy, Benoît Piranda, Frédéric Lassabe, and Julien Bourgeois</p>
+                  <p class="paper-proc subtitle is-6">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) (2019)</p>
+                  <p class="has-text-justified paper-abstract">
+                    Distributed self-reconfiguration in large-scale modular robots is a slow process and increasing its speed a major challenge. In this article, we propose an improved and asynchronous version of a previously proposed distributed self-reconfiguration algorithm to build a parametric scaffolding structure. This scaffold can then be coated to form the desired final object. The scaffolding is built through a continuous feeding of modules into the growing shape from an underneath reserve of modules which shows a reconfiguration time improved by a factor of √[3](N) compared to the previous and synchronous version of the algorithm, therefore attaining an O(N^(1/3)) reconfiguration time, with N the number of modules in the system. Our algorithm uses a local motion coordination algorithm and pipelining techniques to ensure that modules can traverse the structure without collisions or creating deadlocks. Last but not least, our algorithm manages uncertainty in the motion duration of modules without negatively impacting reconfiguration time.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns is-centered is-multiline">
+          <div class="column">
+            <div class="box">
+              <div class="columns">
+                <div class="column is-2-desktop">
+                  <figure class="image is-inline-block paper-thumbnail">
+                    <a href="./papers/RAS19.pdf" target="_blank">
+                      <img src="papers/thumbnails/RAS19.png"/>
+                    </a>
+                  </figure>
+                  <p class="buttons is-centered paper-buttons">
+                    <a class="button" title="Cite this paper"
+                       onClick="showModal('cite-ras19-modal')">
+                      <span class="icon paper-icon">
+                        <i class="fas fa-quote-right" aria-hidden="true"></i>
+                      </span>
+                    </a>
+                    <a class="button" href="./papers/RAS19.pdf"
+                       download="10.1016/j.robot.2019.07.012.pdf" target="_blank"
+                       title="Download">
+                      <span class="icon paper-icon">
+                        <i class="fas fa-download" aria-hidden="true"></i>
+                      </span>
+                    </a>
+                    <a class="button" href="https://doi.org/10.1016/j.robot.2019.07.012"
+                       title="doi:10.1016/j.robot.2019.07.012" target="_blank">
+                      <span class="icon paper-icon">
+                        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                      </span>
+                    </a>
+                  </p>
+                </div>
+                <div class="column">
+                  <!-- Thalamy, Pierre, Benoît Piranda, and Julien Bourgeois. “A Survey of Autonomous Self-Reconfiguration Methods for Robot-Based Programmable Matter.” Robotics and Autonomous Systems 120 (October 2019): 103242. https://doi.org/10.1016/j.robot.2019.07.012. -->
+                  <a href="https://doi.org/10.1016/j.robot.2019.07.012" target="_blank">
+                    <p class="title is-4 paper-title">A Survey of Autonomous Self-reconfiguration Methods for Robot-based Programmable Matter</p>
+                  </a>
+                  <p class="subtitle is-5 paper-authors">Pierre Thalamy, Benoît Piranda, and Julien Bourgeois</p>
+                  <p class="paper-proc subtitle is-6">Robotics and Autonomous Systems (2019)</p>
+                  <p class="has-text-justified paper-abstract">
+                    While researchers envision exciting applications for metamorphic systems like programmable matter, current solutions to the shape formation problem are still a long way from meeting their requirements. To dive deeper into this issue, we propose an extensive survey of the current state of the art of self-reconfiguration algorithms and underlying models in modular robotic and self-organizing particle systems. We identify three approaches for solving this problem and we compare the different solutions using a synoptic graphical representation. We then close this survey by confronting existing methods to our vision of programmable matter, and by discussing a number of future research directions that would bring us closer to making it a reality.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns is-centered is-multiline">
+          <div class="column">
+            <div class="box">
+              <div class="columns">
+                <div class="column is-2-desktop">
+                  <figure class="image is-inline-block paper-thumbnail">
+                    <a href="./papers/AAMAS19.pdf" target="_blank">
+                      <img src="papers/thumbnails/AAMAS19.png"/>
+                    </a>
+                  </figure>
+                  <p class="buttons is-centered paper-buttons">
+                    <a class="button" title="Cite this paper"
+                       onClick="showModal('cite-aamas19-modal')">
+                      <span class="icon paper-icon">
+                        <i class="fas fa-quote-right" aria-hidden="true"></i>
+                      </span>
+                    </a>
+                    <a class="button" href="./papers/AAMAS19.pdf"
+                       download="10.5555/3306127.3331685.pdf" target="_blank"
+                       title="Download">
+                      <span class="icon paper-icon">
+                        <i class="fas fa-download" aria-hidden="true"></i>
+                      </span>
+                    </a>
+                    <a class="button" href="https://dl.acm.org/doi/10.5555/3306127.3331685"
+                       title="doi:10.5555/3306127.3331685" target="_blank">
+                      <span class="icon paper-icon">
+                        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                      </span>
+                    </a>
+                  </p>
+                </div>
+                <div class="column">
+                  <!-- Thalamy, Pierre, Benoît Piranda, and Julien Bourgeois. “Distributed Self-Reconfiguration Using a Deterministic Autonomous Scaffolding Structure.” In Proceedings of the 19th International Conference on Autonomous Agents and MultiAgent Systems, 140–48. Montreal QC, Canada, 2019. https://doi.org/10.5555/3306127.3331685. -->
+                  <a href="https://doi.org/10.5555/3306127.3331685" target="_blank">
+                    <p class="title is-4 paper-title">Scaffold-Based Asynchronous Distributed Self-Reconfiguration By Continuous Module Flow</p>
+                  </a>
+                  <p class="subtitle is-5 paper-authors">Pierre Thalamy, Benoît Piranda, and Julien Bourgeois</p>
+                  <p class="paper-proc subtitle is-6">Proceedings of the 19th International Conference on Autonomous Agents and MultiAgent Systems (2019)</p>
+                  <p class="has-text-justified paper-abstract">
+                    In the context of large distributed modular robots, self-reconfiguration is the process of having modules, seen as autonomous agents, acting together and moving to transform the morphology of their physical arrangement to produce a desired shape. However, due to motion constraints, the number of modules that can move concurrently is greatly limited, thus making self-reconfiguration a very slow process.<br>
+                    In this paper, we propose an approach for accelerating self-reconfi--guration to build a porous version of the desired shape, using scaffolding. We expand this idea and propose a method for constructing a parametric scaffolding model that increases the parallelism of the reconfiguration, supports its mechanical stability, and simplifies planning and coordination between agents. Each agent has a set of basic rules using only four states which guarantees that module movements and the construction of the scaffold are deterministic.<br>
+                    Coupled with an underneath reserve of modules that allows the introduction of rotating quasi-spherical modules at various ground locations of the growing porous structure, our method is able to build the scaffolding structure in O(N^(2/3)) time with N the number of modules composing the structure. Furthermore, we provide simulation results showing that our method uses O(N^(4/3)) messages with no congestion.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div> <!-- container -->
+    </section>
+
+    <section id="modals">
+      <div class="container">
+
+        <div class="modal" id="cite-iros20-modal">
+          <div class="modal-background"></div>
+          <div class="modal-content">
+            <article class="message is-primary">
+              <div class="message-header">
+                <p>Citation (BibTex)</p>
+                <button class="delete" aria-label="delete"
+                        onClick="hideModal('cite-iros20-modal')"></button>
+              </div>
+              <div class="message-body has-text-dark">
+                @inproceedings{thalamy_3d_2020,<br>
+                  address = {Las Vegas, NV, USA},<br>
+                  title = {{3D} {Coating} {Self}-assembly for modular robotic scaffolds},<br>
+                  abstract = {This paper addresses the self-reconfiguration problem in large-scale modular robots for the purpose of shape formation for object representation. It aims to show that this process can be accelerated without compromising on the visual aspect of the final object, by creating an internal skeleton of the shape using the previously introduced sandboxing and scaffolding techniques, and then coating this skeleton with a layer of modules for higher visual fidelity.
+
+                We discuss the challenges of the coating problem, introduce a basic method for constructing the coating of a scaffold layer by layer, and show that even with a straightforward algorithm, our scaffolding and coating combo uses much fewer modules than dense shapes and offers attractive reconfiguration times. Finally, we show that it could be a strong alternative to the construction of dense shapes using traditional self-reconfiguration algorithms.},<br>
+                  booktitle = {In {Proceedings} 2020 {IEEE}/{RSJ} {International} {Conference} on {Intelligent} {Robots} and {Systems}},<br>
+                  author = {Thalamy, Pierre and Piranda, Benoit and Bourgeois, Julien},<br>
+                  year = {2020},<br>
+                }
+
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="modal" id="cite-swevo20-modal">
+          <div class="modal-background"></div>
+          <div class="modal-content">
+            <article class="message is-primary">
+              <div class="message-header">
+                <p>Citation (BibTex)</p>
+                <button class="delete" aria-label="delete"
+                        onClick="hideModal('cite-swevo20-modal')"></button>
+              </div>
+              <div class="message-body has-text-dark">
+                @article{thalamy_deterministic_2020,<br>
+                title = {Deterministic Scaffold Assembly By Self-Reconfiguring Micro-Robotic Swarms},<br>
+                journaltitle = {Swarm and Evolutionary Computation,<br>
+                author = {Thalamy, P. and Piranda, B. and Lassabe, F. and Bourgeois, J.},<br>
+                date = {2020},<br>
+                keywords = {Modular Robotic Swarm, Self-Reconfiguration, Large-Scale Swarm Coordination, Distributed Algorithm, Scaffolding},<br>
+                }
+              </div>
+            </article>
+          </div>
+        </div>
+
+
+        <div class="modal" id="cite-iros19-modal">
+          <div class="modal-background"></div>
+          <div class="modal-content">
+            <article class="message is-primary">
+              <div class="message-header">
+                <p>Citation (BibTex)</p>
+                <button class="delete" aria-label="delete"
+                        onClick="hideModal('cite-iros19-modal')"></button>
+              </div>
+              <div class="message-body has-text-dark">
+@inproceedings{thalamy_scaffold-based_2019,<br>
+        title = {Scaffold-Based Asynchronous Distributed Self-Reconfiguration By Continuous Module Flow},<br>
+        doi = {10.1109/IROS40897.2019.8967775},<br>
+        pages = {4840--4846},<br>
+        booktitle = {2019 {IEEE}/{RSJ} International Conference on Intelligent Robots and Systems ({IROS})},<br>
+        author = {Thalamy, P. and Piranda, B. and Lassabe, F. and Bourgeois, J.},<br>
+        date = {2019-11},<br>
+        file = {Thalamy et al. - 2019 - SCAFFOLD-BASED ASYNCHRONOUS DISTRIBUTED SELF-RECON.pdf:/home/pthalamy/Zotero/storage/A7Y4TE9S/Thalamy et al. - 2019 - SCAFFOLD-BASED ASYNCHRONOUS DISTRIBUTED SELF-RECON.pdf:application/pdf}<br>
+ }
+               </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="modal" id="cite-ras19-modal">
+          <div class="modal-background"></div>
+          <div class="modal-content">
+            <article class="message is-primary">
+              <div class="message-header">
+                <p>Citation (BibTex)</p>
+                <button class="delete" aria-label="delete"
+                        onClick="hideModal('cite-ras19-modal')"></button>
+              </div>
+              <div class="message-body has-text-dark">
+                @article{THALAMY2019103242,<br>
+                title = "A survey of autonomous self-reconfiguration methods for robot-based programmable matter",<br>
+                journal = "Robotics and Autonomous Systems",<br>
+                volume = "120",<br>
+                 pages = "103242",<br>
+                 year = "2019",<br>
+                 issn = "0921-8890",<br>
+                 doi = "https://doi.org/10.1016/j.robot.2019.07.012",<br>
+                 url = "http://www.sciencedirect.com/science/article/pii/S0921889019301459",<br>
+                 author = "Pierre Thalamy and Benoît Piranda and Julien Bourgeois",<br>
+                 keywords = "Self-reconfiguration, Modular robots, Programmable matter, Distributed algorithms, Self-organizing particle systems",<br>
+                 abstract = "While researchers envision exciting applications for metamorphic systems like programmable matter, current solutions to the shape formation problem are still a long way from meeting their requirements. To dive deeper into this issue, we propose an extensive survey of the current state of the art of self-reconfiguration algorithms and underlying models in modular robotic and self-organizing particle systems. We identify three approaches for solving this problem and we compare the different solutions using a synoptic graphical representation. We then close this survey by confronting existing methods to our vision of programmable matter, and by discussing a number of future research directions that would bring us closer to making it a reality."<br>
+                 }
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="modal" id="cite-aamas19-modal">
+          <div class="modal-background"></div>
+          <div class="modal-content">
+            <article class="message is-primary">
+              <div class="message-header">
+                <p>Citation (BibTex)</p>
+                <button class="delete" aria-label="delete"
+                        onClick="hideModal('cite-aamas19-modal')"></button>
+              </div>
+              <div class="message-body has-text-dark">
+                @inproceedings{10.5555/3306127.3331685,<br>
+                author = {Thalamy, Pierre and Piranda, Benoit and Bourgeois, Julien},<br>
+                title = {Distributed Self-Reconfiguration Using a Deterministic Autonomous Scaffolding Structure},<br>
+                year = {2019},<br>
+                isbn = {9781450363099},<br>
+                publisher = {International Foundation for Autonomous Agents and Multiagent Systems},<br>
+                address = {Richland, SC},<br>
+                booktitle = {Proceedings of the 18th International Conference on Autonomous Agents and MultiAgent Systems},<br>
+                pages = {140–148},<br>
+                numpages = {9},<br>
+                keywords = {autonomous robots, self-reconfiguration, distributed algorithm},<br>
+                location = {Montreal QC, Canada},<br>
+                series = {AAMAS ’19}<br>
+                }
+              </div>
+            </article>
+          </div>
+        </div>
+
+      </div> <!-- container -->
+    </section>
+
+    <script type="text/javascript" src="lib/main.js"></script>
+  </body>
+</html>

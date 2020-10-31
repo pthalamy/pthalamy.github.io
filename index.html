@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pierre Thalamy - Personal Page</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="node_modules/academicons/css/academicons.min.css"/>
+    <script src="https://kit.fontawesome.com/1f885e67b8.js" crossorigin="anonymous"></script>
+  </head>
+  <body class="has-background-primary">
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+      <!-- <div class="navbar-brand"> -->
+        <!--   <\!-- <a class="navbar-item" href="https://bulma.io"> -\-> -->
+          <!--   <\!--   <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28"> -\-> -->
+            <!--   <\!-- </a> -\-> -->
+
+              <!--   <\!-- <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample"> -\-> -->
+                <!--   <\!--   <span aria-hidden="true"></span> -\-> -->
+                  <!--   <\!--   <span aria-hidden="true"></span> -\-> -->
+                    <!--   <\!--   <span aria-hidden="true"></span> -\-> -->
+                      <!--   <\!-- </a> -\-> -->
+                        <!-- </div> -->
+
+      <div id="navbarHome" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item is-active" href="#">
+            <i class="fa fa-fw fa-home"></i> Home
+          </a>
+
+          <a class="navbar-item" href="publications.html">
+            <i class="fas fa-fw fa-copy"></i> Publications
+          </a>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              <i class="fas fa-fw fa-file-pdf"></i> CV
+            </a>
+
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="./files/cv_pthalamy_072020_en-us.pdf"
+                 target="_blank">
+                English Version
+              </a>
+              <a class="navbar-item" href="./files/cv_pthalamy_072020_fr.pdf"
+                 target="_blank">
+                Version Française
+              </a>
+            </div>
+          </div>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              More
+            </a>
+
+            <div class="navbar-dropdown">
+              <!-- <a class="navbar-item">
+                About
+              </a>
+              <hr class="navbar-divider"> -->
+              <a class="navbar-item modal-button" onClick="showContactModal()">
+                Contact
+              </a>
+            </div>
+          </div>
+
+          <div class="navbar-end">
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- <section class="hero is-medium is-primary"> -->
+      <!--   <div class="hero-body"> -->
+        <!--     <div class="container"> -->
+          <!--       <div class="columns"> -->
+            <!--         <div class="column is-8-desktop is-offset-2-desktop"> -->
+              <!--           <h1 class="title is-2 is-spaced"> -->
+                <!--               Pierre Thalamy -->
+                <!--             </h1> -->
+              <!--           <h2 class="subtitle is-4"> -->
+                <!--             Welcome to my <strong>personal page</strong>. -->
+                <!--           </h2> -->
+              <!--         </div> -->
+            <!--       </div> -->
+          <!--     </div> -->
+        <!--   </div> -->
+      <!-- </section> -->
+
+        </div>
+      </div>
+    </section>
+
+    <section id="profile-header" class="is-primary is-medium">
+      <div class="container" style="margin-top: 1em;">
+        <div class="columns is-centered is-multiline">
+          <div class="column is-4">
+            <div class="box box-shadow-lift">
+
+              <div class="card-content has-text-centered">
+                <figure class="image is-inline-block profile-image">
+                  <img src="images/profile_stationf.jpg" class="is-rounded profile-image"/>
+                </figure>
+                <p class="title is-space is-primary-invert">
+                  Pierre Thalamy, PhD
+                </p>
+                <p class="subtitle">
+                  R&D Software Engineer at UpTale
+                </p>
+                <p class="buttons is-centered" id="internet-buttons">
+                  <a class="button" href="https://github.com/pthalamy" target="_blank" rel="noopener">
+                    <span class="icon">
+                      <i class="fab fa-github" aria-hidden="true"></i>
+                    </span>
+                  </a>
+
+                  <a class="button" href="https://www.femto-st.fr/en/femto-people/pthalamy" target="_blank" rel="noopener">
+                    <span class="icon">
+                      <i class="fas fa-flask"></i>
+                    </span>
+                  </a>
+
+                  <a class="button" href="https://scholar.google.com/citations?user=igSEoMoAAAAJ&hl=en" target="_blank" rel="noopener">
+                    <span class="icon">
+                      <i class="ai ai-google-scholar"></i>
+                    </span>
+                  </a>
+
+                  <a class="button" href="https://www.researchgate.net/profile/Pierre_Thalamy" target="_blank" rel="noopener">
+                    <span class="icon">
+                      <i class="fab fa-researchgate"></i>
+                    </span>
+                  </a>
+
+                  <a class="button" href="https://www.linkedin.com/in/pthalamy/" target="_blank" rel="noopener">
+                    <span class="icon">
+                      <i class="fab fa-linkedin-in"></i>
+                    </span>
+                  </a>
+
+                  <!-- <a class="button" href="https://twitter.com/pthalamy" target="_blank" rel="noopener">
+                    <span class="icon">
+                      <i class="fab fa-twitter"></i>
+                    </span>
+                  </a> -->
+
+                  <a class="button modal-button" onClick="showContactModal()">
+                    <span class="icon">
+                      <i class="far fa-envelope"></i>
+                    </span>
+                  </a>
+
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="profile-cards" class="has-background-primary">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-12">
+            <div class="box box-shadow-lift" id="summary">
+              <div class="card-content">
+                <div class="header">
+                  <p class="title is-4">🚀 Summary</p>
+                  <hr class="primary">
+                </div>
+                <div class="content">
+                  Hi and welcome to my personal page. 👋😊<br>
+                  I am a Full-Stack Software Engineer 👨‍💻 and Researcher 👨‍🔬 currently working on virtual reality tech at <a href="https://www.uptale.io">UpTale - Immersive Learning</a>, in <a href="https://www.stationf.co">Station F</a>, Paris 🇫🇷. <br>
+                  You will find on this website information on my current occupation, obsessions, and past research experience.<br>
+                  Feel free to reach out to me through the contact form or one of my social accounts! 💌<br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns is-centered is-multiline">
+
+          <div class="column is-6">
+            <div class="box box-shadow-lift" id="occupation">
+              <div class="card-content">
+                <div class="header">
+                  <p class="title is-4"><i class="fas fa-vr-cardboard"></i> Occupation</p>
+                  <hr class="primary">
+                </div>
+                <div class="content">
+                  <div class="card-text">
+                    <strong>Full-Stack Software Engineer <span style="color:#2bdac0; font-weight: bolder; font-family: cursive;">@</span></strong>
+                  </div>
+                  <div class="is-centered">
+                    <a href="https://www.uptale.io" target="_blank" rel="noopener">
+                      <img src="images/uptale-logo-v2-dark.png" alt="UpTale - Immersive Learning Logo" />
+                    </a>
+                  </div>  
+                  <div class="card-text">
+                    <strong>Uptale</strong> is the <span style="font-style: italic;">Immersive Learning</span> platform designed for businesses to create, share and track training modules in 360° and Virtual Reality.
+                  </div>
+                  <div class="map-responsive">
+                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0ph-sAzM4ng" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-6">
+            <div class="box box-shadow-lift" id="location">
+              <div class="card-content">
+                <div class="header">
+                  <p class="title is-4">📍 Location</p>
+                  <hr class="primary">
+                </div>
+                <div class="content">
+                  <!-- <div class="map-responsive"> -->
+                    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2626.2626226164384!2d2.3688015159023594!3d48.834129110368366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67222208823cf%3A0x541ecb63365de48!2sSTATION%20F!5e0!3m2!1sen!2sfr!4v1604045270284!5m2!1sen!2sfr" width="600" height="450" yframeborder="0" style="border:0; position:relative;" aria-hidden="false" allowfullscreen></iframe> -->
+                  <!-- </div> -->
+                  <div class="map-responsive">
+                    <iframe width="560" height="315" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2626.2626226164384!2d2.3688015159023594!3d48.834129110368366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67222208823cf%3A0x541ecb63365de48!2sSTATION%20F!5e0!3m2!1sen!2sfr!4v1604045270284!5m2!1sen!2sfr" frameborder="0" allowfullscreen></iframe>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-6">
+            <div class="box box-shadow-lift" id="academic-bio">
+              <div class="card-content">
+                <div class="header">
+                  <p class="title is-4">👨‍🔬 Academic Bio </p>
+                  <hr class="primary">
+                </div>
+                <div class="content has-text-justified">
+                  <strong>Pierre Thalamy</strong> received his M.Sc. degree in Computer Science with high honors from Grenoble Institute of Technology - Ensimag, France in 2017. He then received his Ph.D. in Computer Science from the University of Bourgogne Franche-Comté, in the Optimization, Mobility, NetworkIng (OMNI) team at the Department of Computer Science for Complex Systems (DISC) of Institut FEMTO-ST, France.<br>
+                  <br>
+                  He worked under the supervision of Prof. Julien Bourgeois, and Dr. Benoît Piranda. His thesis is about the design of efficient 3-dimensional self-reconfiguration methods for building programmable matter using modular robotic systems. He is also involved in the Programmable Matter, CO2Dim, and Claytronics projects, and was the lead developer of the VisibleSim modular robotic simulator from 2015 to 2020. His research interests include self-reconfiguration and locomotion using modular robotics systems, multi-agent systems, emergent control, and distributed algorithms.<br>
+                  <br>
+                  Within the context of the Programmable Matter project, he has improved upon existing methods of 3D modular robot self-reconfiguration by building upon successful pre-existing research ideas and proposing new original ones, making them faster and more parallel in order to bring programmable matter-based display systems closer to reality.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-6">
+            <div class="box box-shadow-lift" id="defense">
+              <div class="card-content">
+                <div class="header">
+                  <p class="title is-4">👨‍🎓📼 Ph.D. Thesis Defense Replay</p>
+                  <hr class="primary">
+                </div>
+                <div class="content">
+                  <div class="card-text">
+                    Below is the replay of my PhD thesis defense that took place on <strong>October, 9th 2020</strong> in Montbéliard.<br>
+                    Please refer to my <a href="publications.html">publications</a> page for more information.
+                  </div>
+                  <div class="map-responsive">
+                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/mNu0lyWhXHA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                  <div class="defense-outline">
+                    <strong>Outline</strong>
+                    <table class="table is-striped is-hoverable">
+                      <thead>
+                        <th>Content</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Opening</td>
+                          <td>21:15</td>
+                          <td>22:45</td>
+                        </tr>
+                        <tr>
+                          <td>Presentation</td>
+                          <td>22:45</td>
+                          <td>1:14:27</td>
+                        </tr>
+                        <tr>
+                          <td>Q&A</td>
+                          <td>1:14:27</td>
+                          <td>2:39:15</td>
+                        </tr>
+                        <tr>
+                          <td>Director Feedback</td>
+                          <td>2:39:15</td>
+                          <td>2:42:59</td>
+                        </tr>
+                        <tr>
+                          <td>Director Feedback</td>
+                          <td>2:39:15</td>
+                          <td>2:42:59</td>
+                        </tr>
+                        <tr>
+                          <td>Award</td>
+                          <td>3:05:20</td>
+                          <td>3:14:40</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-6">
+            <div class="box box-shadow-lift" id="avocado_guide">
+              <div class="card-content">
+                <div class="header">
+                  <p class="title is-4">🥑 Avocado Tree Growing Tips </p>
+                  <hr class="primary">
+                </div>
+                <div class="content">
+                  <div style="text-align: center  ;">
+                    <figure class="image is-inline-block paper-thumbnail">
+                      <a href="https://paper.dropbox.com/doc/Faire-Pousser-des-Avocatiers-La-Methode-Secrete--A~cmUgMhPXpALB1l1TYWP6PJAg-o4UE1efGSVzzCIrsTtVdw" target="_blank">
+                        <img src="images/avocado_guide.png" style="max-height: 350px; width: auto"/>
+                      </a>
+                    </figure>  
+                  </div>
+                  <div style="margin-top: 1.5em;">
+                    After spending considerably more time than what can be considered reasonable trying to grow trees from avocado pits and testing out all kinds of methods, I was able to achieve a particularly high success-rate in my sprouting endeavours.<br>
+                    I have thus decided to share my method with friends and family, and now the world, hoping that this would save people energy and time, which they could hopefully dedicate to more societally productive tasks. 😄<br>
+                    The guide is currently only available in 🇫🇷 and on <a href="https://paper.dropbox.com/doc/Faire-Pousser-des-Avocatiers-La-Methode-Secrete--A~cmUgMhPXpALB1l1TYWP6PJAg-o4UE1efGSVzzCIrsTtVdw" target="_blank">Dropbox Paper</a>, but I am planning to translate it and make it more easily accessible in the near future.    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-6-desktop is-6">
+            <div class="box box-shadow-lift" id="wbw">
+              <div class="card-content">
+                <div class="header">
+                  <p class="title is-4">🇺🇸✒🇫🇷 WaitButWhy Translation</p>
+                  <hr class="primary">
+                </div>
+                <div class="content">
+                  <div>
+                    <figure class="image is-inline-block">
+                      <a href="http://attendsmaispourquoi.fr/attends-mais-qui-sommes-nous/" target="_blank">
+                        <!-- <img src="images/avocado_guide.png" style="max-height: 500px; width: auto"/> -->
+                        <img src="images/Wait-But-Why_2048x.webp"/>
+                      </a>
+                    </figure>  
+                  </div>
+                  <div style="margin-top: 1.5em;">
+                    I am involved in the <a href="http://attendsmaispourquoi.fr/attends-mais-qui-sommes-nous/" target="_blank" style="font-variant: small-caps;">AttendsMaisPourquoi</a> project, named after the great blog <a href="https://www.waitbutwhy.com" target="_blank" style="font-variant: small-caps;">WaitButWhy</a> by Tim Urban, from which our site is the official French translation.<br>
+                    Our goal is to translate all articles from the WaitButWhy blog that we deem important enough for our society and public discourse to be made available to people of all languages.<br>
+                    We work in small teams of one or several translators and reviewers for each article, and I have spent some time developing tools and tweaking our WordPress website to make it as close to the original blog as possible.  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="modals">
+      <div class="container">
+        <div class="modal" id="contact-modal">
+          <div class="modal-background"></div>
+          <div class="modal-content box">
+
+            <form action="https://formspree.io/xgelgaja"
+                  name="contactform"
+                  method="POST"
+                  onsubmit="return validateFormInput()">
+              <div class="field">
+                <label class="label">Name</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Your name" name="name">
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">Email</label>
+                <div class="control has-icons-left has-icons-right">
+                  <input class="input" type="email" id="email-input"
+                         placeholder="email" value="" name="_replyto">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                  <span class="icon is-small is-right is-hidden" id="email-warning-sign" >
+                    <i class="fas fa-exclamation-triangle"></i>
+                  </span>
+                </div>
+                <p class="help is-danger is-hidden" id="email-warning-label">
+                  This email is invalid
+                </p>
+              </div>
+
+              <div class="field">
+                <label class="label">Subject</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Subject"
+                         name="subject"></input>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label" style="overflow: auto">Message</label>
+                <div class="control">
+                  <textarea class="textarea" placeholder="Your message" name="message"value=""></textarea>
+                </div>
+              </div>
+
+              <div class="field is-grouped">
+                <div class="control">
+                  <button class="button is-link" type="submit">
+                    Submit
+                  </button>
+                </div>
+                <div class="control">
+                  <button class="button is-link is-light" onClick="hideContactModal()">
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </form>
+
+          </div>
+          <button class="modal-close is-large" aria-label="close"
+                  onClick="hideContactModal()">
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer is-primary">
+      <div class="content has-text-centered has-text-weight-light">
+        <p class="has-text-white">
+          Copyright © 2020 Pierre Thalamy
+          <!-- <a href="https://bulma.io"> -->
+            <!--   <img src="images/made-with-bulma--dark.png" alt="Made with Bulma" width="128" height="24"> -->
+            <!-- </a> -->
+        </p>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="lib/main.js"></script>
+
+  </body>
+</html>

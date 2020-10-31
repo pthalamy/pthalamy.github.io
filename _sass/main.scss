@@ -1,0 +1,162 @@
+@charset "utf-8";
+
+// Customization
+
+// You can easily customize Bulma with your own variables.
+// Just uncomment the following block to see the result.
+
+/*
+// 1. Import the initial variables
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+
+// 2. Set your own initial variables
+// Update the blue shade, used for links
+$blue: #06bcef;
+// Add pink and its invert
+$pink: #ff8080;
+$pink-invert: #fff;
+// Update the sans-serif font family
+$family-sans-serif: "Helvetica", "Arial", sans-serif;
+
+// 3. Set the derived variables
+// Use the new pink as the primary color
+$primary: $pink;
+$primary-invert: $pink-invert;
+
+// 4. Import the rest of Bulma
+*/
+
+$myblue: #044F67;
+$myblue-invert: #fff;
+$mybg: #f6f9fc;
+$primary: $myblue;
+$primary-invert: $myblue-invert;
+$footer-background-color: $myblue;
+$footer-padding: 1rem 1.5rem 1rem;
+
+#internet-buttons a .icon {
+    // color: $myblue;
+}
+
+.hero {
+    margin-bottom: 2em;
+}
+
+.navbar {
+    // margin-bottom: 4em;
+}
+
+.navbar-item i {
+  display: inline-block;
+  margin-right: 10em;
+}
+
+html, body {
+    background-color: $mybg;
+    margin: 0;
+    min-height: 100%;
+    background-size: cover;
+}
+
+.profile-image {
+    width: 192px;
+    height: 192px;
+    margin-bottom: 1em;
+}
+
+#publications-list {
+    padding-bottom: 2em;
+}
+
+.paper-thumbnail {
+    box-shadow: 5px 5px 5px 5px  grey;
+}
+
+.paper-title {
+
+}
+
+.paper-authors {
+    margin-bottom: 0.25em !important;
+}
+
+.paper-proc {
+    font-style: italic;
+}
+
+.thesis-defense {
+    // font-weight: bold;
+    margin-top: 0.5em;
+}
+
+.defense-outline {
+    margin-top: 1em;
+}
+
+.thesis-jury {
+    font-weight: bold;
+    margin-top: 0.5em;
+}
+
+.jury-members {
+
+}
+
+.paper-abstract {
+}
+
+.paper-buttons {
+    margin-top: 1em;
+}
+
+.paper-icon {
+    color: $primary;
+}
+
+.main-margin {
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.footer {
+    margin-top: 1em;
+}
+
+.footer .content p {
+    font-size: 0.6em;
+}
+
+
+.map-responsive {
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+
+.map-responsive iframe {
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+.content .card-text {
+    margin-bottom: 1em;
+}
+
+.columns {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+@import "../node_modules/bulma/bulma";

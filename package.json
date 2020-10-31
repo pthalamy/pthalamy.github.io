@@ -1,0 +1,37 @@
+{
+  "name": "pthalamy-pp",
+  "version": "1.0.0",
+  "description": "Pierre Thalamy's personal page.",
+  "main": "index.js",
+  "scripts": {
+    "css-build": "node-sass _sass/main.scss css/main.css",
+    "css-deploy": "npm run css-build && npm run css-postcss",
+    "css-postcss": "postcss --use autoprefixer --output css/main.css css/main.css",
+    "css-watch": "npm run css-build -- --watch",
+    "deploy": "npm run css-deploy && npm run js-build",
+    "js-build": "babel _javascript --out-dir lib",
+    "js-watch": "npm run js-build -- --watch",
+    "start": "npm-run-all --parallel css-watch js-watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/pthalamy/pthalamy-pp.git"
+  },
+  "author": "Pierre Thalamy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pthalamy/pthalamy-pp/issues"
+  },
+  "homepage": "https://github.com/pthalamy/pthalamy-pp#readme",
+  "dependencies": {
+    "academicons": "^1.8.6",
+    "autoprefixer": "^9.7.6",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015-ie": "^6.7.0",
+    "bulma": "^0.8.2",
+    "node-sass": "^4.13.1",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^7.1.0"
+  }
+}
