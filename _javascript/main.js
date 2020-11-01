@@ -3,14 +3,15 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /// Close Modals when clicking outside of them
-var modal = document.querySelector(".modal");
+var modals = document.querySelectorAll(".modal");
 
 // Detect all clicks on the document
 document.addEventListener("click", function(event) {
     // If user clicks inside the element, do nothing
     if (event.target.closest(".modal-background")) {
         // If user clicks inside the modal's background, hide it!
-        modal.classList.remove("is-active");
+        modals.forEach(modal => modal.classList.remove("is-active"));
+        // modal.classList.remove("is-active");
     }
 });
 
@@ -56,10 +57,3 @@ function showModal(id) {
 function hideModal(id) {
     document.getElementById(id).classList.remove("is-active");
 }
-
-// Clickable table rows
-jQuery(document).ready(function($) {
-    $(".clickable-row").click(function() {
-        window.location = $(this).data("href");
-    });
-});
