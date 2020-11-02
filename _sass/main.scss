@@ -28,6 +28,7 @@ $primary-invert: $pink-invert;
 
 $myblue: #044F67;
 $myblue-invert: #fff;
+$my-yellow: #F6AE2D;
 $mybg: #f6f9fc;
 $primary: $myblue;
 $primary-invert: $myblue-invert;
@@ -35,20 +36,20 @@ $footer-background-color: $myblue;
 $footer-padding: 1rem 1.5rem 1rem;
 
 #internet-buttons a .icon {
-    // color: $myblue;
+    // color: $my-yellow;
 }
 
 .hero {
     margin-bottom: 2em;
 }
 
-.navbar {
-    // margin-bottom: 4em;
-}
+// .navbar {
+//     // margin-bottom: 4em;
+// }
 
 .navbar-item i {
   display: inline-block;
-  margin-right: 10em;
+//   margin-right: .5em;
 }
 
 html, body {

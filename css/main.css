@@ -22,8 +22,7 @@ $primary-invert: $pink-invert;
   margin-bottom: 2em; }
 
 .navbar-item i {
-  display: inline-block;
-  margin-right: 10em; }
+  display: inline-block; }
 
 html, body {
   background-color: #f6f9fc;

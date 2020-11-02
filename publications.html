@@ -62,7 +62,7 @@
       </div>
     </nav>
 
-    <section class="hero is-primary is-bold is-small">
+    <section class="hero is-primary is-bold is-small" style="margin-bottom: 1em;">
       <div class="hero-body">
         <div class="container has-text-centered">
           <h1 class="title">
@@ -593,6 +593,73 @@ We discuss the challenges of the coating problem, introduce a basic method for c
               </div>
             </article>
           </div>
+        </div>
+
+        <div class="modal" id="contact-modal">
+          <div class="modal-background"></div>
+          <div class="modal-content box">
+
+            <form action="https://formspree.io/xgelgaja"
+                  name="contactform"
+                  method="POST"
+                  onsubmit="return validateFormInput()">
+              <div class="field">
+                <label class="label">Name</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Your name" name="name">
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">Email</label>
+                <div class="control has-icons-left has-icons-right">
+                  <input class="input" type="email" id="email-input"
+                         placeholder="email" value="" name="_replyto">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                  <span class="icon is-small is-right is-hidden" id="email-warning-sign" >
+                    <i class="fas fa-exclamation-triangle"></i>
+                  </span>
+                </div>
+                <p class="help is-danger is-hidden" id="email-warning-label">
+                  This email is invalid
+                </p>
+              </div>
+
+              <div class="field">
+                <label class="label">Subject</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Subject"
+                          name="subject"></input>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label" style="overflow: auto">Message</label>
+                <div class="control">
+                  <textarea class="textarea" placeholder="Your message" name="message"value=""></textarea>
+                </div>
+              </div>
+
+              <div class="field is-grouped">
+                <div class="control">
+                  <button class="button is-link" type="submit">
+                    Submit
+                  </button>
+                </div>
+                <div class="control">
+                  <button class="button is-link is-light" onClick="hideContactModal()">
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </form>
+
+          </div>
+          <button class="modal-close is-large" aria-label="close"
+                  onClick="hideContactModal()">
+          </button>
         </div>
 
       </div> <!-- container -->

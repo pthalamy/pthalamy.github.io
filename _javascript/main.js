@@ -12,6 +12,8 @@ document.addEventListener("click", function(event) {
         // If user clicks inside the modal's background, hide it!
         modals.forEach(modal => modal.classList.remove("is-active"));
         // modal.classList.remove("is-active");
+    } else if (event.target.closest(".navbar-burger")) {
+        document.querySelector(".navbar-burger").classList.toggle("is-active");
     }
 });
 
