@@ -36,4 +36,16 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://pthalamy.github.io/cv.html"/>
     <lastmod>2026-09-19</lastmod>
   </url>
+  <url>
+    <loc>https://pthalamy.github.io/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pthalamy.github.io/about.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pthalamy.github.io/fr/about.html"/>
+    <lastmod>2026-09-19</lastmod>
+  </url>
+  <url>
+    <loc>https://pthalamy.github.io/fr/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pthalamy.github.io/fr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pthalamy.github.io/about.html"/>
+    <lastmod>2026-09-19</lastmod>
+  </url>
 </urlset>

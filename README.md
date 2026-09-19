@@ -6,6 +6,7 @@ Personal website of Pierre Thalamy, served by GitHub Pages at <https://pthalamy.
 
 ```
 index.html            English home page
+about.html            Personal page (warm theme via the mood-warm class on <html>)
 publications.html     Papers, thesis, jury, abstracts, BibTeX
 cv.html               Printable résumé (use the "Print or save as PDF" button)
 fr/                   French versions of the three pages
