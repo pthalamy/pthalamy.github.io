@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pierre Thalamy</title>
-  <meta name="description" content="Pierre Thalamy, docteur en informatique. Lead Software Engineer chez Uptale à Paris, à la tête de l'équipe Platform & Data d'un produit d'apprentissage immersif : comptes, intégrations, analytics et l'infrastructure cloud sous-jacente. Ancien chercheur en robotique modulaire et matière programmable.">
+  <meta name="description" content="Pierre Thalamy, docteur en informatique. Lead Software Engineer chez Uptale à Paris, à la tête de l'équipe Platform & Data. Ancien chercheur en robotique modulaire.">
   <meta name="author" content="Pierre Thalamy">
   <meta name="theme-color" content="#fbfaf8">
   <link rel="canonical" href="https://pthalamy.github.io/fr/">
@@ -65,8 +65,8 @@
             <p>
               Je dirige l'équipe Platform &amp; Data chez Uptale : les comptes, intégrations et analytics sur lesquels
               repose chaque expérience d'apprentissage immersif, ainsi que les services backend et l'infrastructure
-              cloud sous-jacents. Full-stack de métier, avec une prédilection pour le backend et l'infrastructure, et
-              l'interlocuteur de référence de mes collègues des autres domaines du produit.
+              cloud sous-jacents. Full-stack de métier, avec une prédilection pour le backend et l'infrastructure.
+              Quand l'équipe bute sur une friction, je construis l'outil qui la supprime.
             </p>
             <p>
               Avant l'industrie, j'ai soutenu une thèse sur les algorithmes distribués d'auto-reconfiguration de robots
@@ -105,6 +105,39 @@
       </div>
     </section>
 
+    <section class="section wrap" id="projects">
+      <div class="section-head reveal">
+        <h2>Travaux choisis</h2>
+      </div>
+      <div class="grid-2">
+        <article class="card reveal">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-4l-1 2h-4l-1-2H5a2 2 0 0 1-2-2V9Z"/><path d="M8 12h.01M16 12h.01"/></svg>
+          </div>
+          <h3><a href="https://www.uptale.io" rel="noopener" target="_blank">Plateforme Uptale</a></h3>
+          <p>
+            Comptes, intégrations et analytics du produit d'apprentissage immersif d'Uptale : le socle SaaS sur lequel
+            reposent les expériences Studio et Playtime, utilisé par Airbus, Stellantis, L'Oréal et des centaines
+            d'autres organisations pour diffuser et suivre des formations 360° et VR sur casques, navigateurs et
+            plateformes LMS.
+          </p>
+          <div class="tag-row"><span class="tag">.NET</span><span class="tag">Azure</span><span class="tag">Terraform</span></div>
+        </article>
+
+        <article class="card reveal" data-delay="1">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 7.5v9L12 21l8-4.5v-9L12 3Z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></svg>
+          </div>
+          <h3><a href="https://github.com/ProgrammableMatterProject/VisibleSim" rel="noopener" target="_blank">VisibleSim</a></h3>
+          <p>
+            Simulateur open source en C++ pour robots modulaires et matière programmable. J'en ai dirigé le développement
+            pendant cinq ans, d'un prototype de recherche à un outil utilisé par des équipes en France, à Hong Kong et aux États-Unis.
+          </p>
+          <div class="tag-row"><span class="tag">C++</span><span class="tag">OpenGL</span><span class="tag">Open source</span></div>
+        </article>
+      </div>
+    </section>
+
     <section class="section wrap" id="experience">
       <div class="section-head reveal">
         <h2>Parcours</h2>
@@ -118,19 +151,22 @@
             <span class="tl-when">Depuis nov. 2020</span>
           </div>
           <p>
-            Uptale permet aux entreprises de créer, diffuser et suivre des formations en 360° et en réalité virtuelle
+            Uptale permet à plus de 500 organisations, dont Airbus, Stellantis, TotalEnergies, L'Oréal, Sanofi et
+            Siemens, de créer, diffuser et suivre des formations en 360° et en réalité virtuelle
             à grande échelle, et a <a href="https://www.uptale.io/en/articles/immersive-training-uptale-accelerates-its-vr-revolution-with-a-9-millions-fundraising/" rel="noopener">levé 9 millions d'euros en 2024</a>
             pour accélérer. Le produit s'organise en trois domaines : Studio, où l'on conçoit les expériences
             immersives, Playtime, où on les joue en casque et sur le web, et Platform, le socle SaaS qui relie le tout.
             J'y suis entré peu après ma thèse, quand Uptale était encore une jeune startup, et j'ai grandi avec elle
             jusqu'à la scale-up en forte croissance qu'elle est devenue : ingénieur logiciel, puis senior, et lead de
-            l'équipe Platform &amp; Data depuis 2026.
+            l'équipe Platform &amp; Data depuis février 2026.
           </p>
           <ul>
-            <li>Responsable de bout en bout du domaine Platform &amp; Data : comptes, intégrations et analytics, du modèle de données et de l'API jusqu'au front React et TypeScript.</li>
-            <li>Responsable de son backend et de son infrastructure cloud : services ASP.NET Core sur Azure, provisionnés et versionnés avec Terraform.</li>
-            <li>Direction de l'équipe : orientation technique, revues de code, mentorat et planification des livraisons.</li>
-            <li>Interlocuteur de référence au-delà de mon équipe, contribuant aux sujets d'architecture, d'infrastructure, de fiabilité et de sécurité sur l'ensemble du produit.</li>
+            <li>Fait passer la plateforme de quelques centaines de sessions de formation par jour en 2020 à plusieurs dizaines de milliers aujourd'hui, plus de deux millions de sessions délivrées au total, sur un backend qui a encore de la marge.</li>
+            <li>Étendu un SaaS multi-tenant aux déploiements privés : le même produit tourne désormais dans l'Azure des clients et sur site, dans des réseaux restreints, à partir d'un code commun. Référent technique et premier interlocuteur de ces clients, du projet au support.</li>
+            <li>Passé l'infrastructure en code, Bicep d'abord, puis Terraform : production, région miroir aux États-Unis, staging identique à la prod et environnements de dev sortent d'une même base, sans dérive entre eux.</li>
+            <li>Mené la migration du backend d'ASP.NET MVC vers ASP.NET Core et celle de la façade d'Application Gateway vers Azure Front Door.</li>
+            <li>Mis backend et infrastructure en conformité ISO 27001 avec le CTO et le head of engineering, certification obtenue en 2025, et garant de leur sécurité depuis, remédiation du pentest annuel comprise.</li>
+            <li>Supprime les frictions de toute l'équipe d'ingénierie : agents de build CI/CD scalables, gates de PR accélérées, montées de version et fusions de branches automatisées, et les guidelines et skills que développeurs et agents IA utilisent chaque jour.</li>
           </ul>
           <div class="tag-row">
             <span class="tag">C#</span><span class="tag">ASP.NET Core</span><span class="tag">Azure</span><span class="tag">Terraform</span><span class="tag">React</span><span class="tag">TypeScript</span>
@@ -160,30 +196,6 @@
 
         <li class="tl-item reveal">
           <div class="tl-head">
-            <h3>Ingénieur logiciel, projet de fin d'études</h3>
-            <span class="tl-org">Supralog, Antibes</span>
-            <span class="tl-when">2017, 6 mois</span>
-          </div>
-          <p>
-            Conception d'un backend REST sécurisé en C# pour un ERP destiné aux associations, d'un module réactif
-            Vue.js pour son application web et d'une application mobile multiplateforme Xamarin sur la même API.
-          </p>
-        </li>
-
-        <li class="tl-item reveal">
-          <div class="tl-head">
-            <h3>Assistant de recherche</h3>
-            <span class="tl-org">Université polytechnique de Hong Kong</span>
-            <span class="tl-when">2016, 4 mois</span>
-          </div>
-          <p>
-            Passage de VisibleSim d'un prototype de recherche à sa première version stable : refonte de l'architecture,
-            refactorisation, documentation et nouveaux modules au service des travaux en cours.
-          </p>
-        </li>
-
-        <li class="tl-item reveal">
-          <div class="tl-head">
             <h3>Assistant de recherche, projet Claytronics</h3>
             <span class="tl-org">Carnegie Mellon University, Pittsburgh</span>
             <span class="tl-when">2014, 5 mois</span>
@@ -193,76 +205,7 @@
             machine virtuelle embarquée pour le langage déclaratif Meld, réutilisée ensuite en enseignement et en recherche.
           </p>
         </li>
-
-        <li class="tl-item reveal">
-          <div class="tl-head">
-            <h3>Diplôme d'ingénieur en informatique</h3>
-            <span class="tl-org">Grenoble INP - Ensimag</span>
-            <span class="tl-when">2014 à 2017</span>
-          </div>
-          <p>
-            Diplômé avec mention très bien, filière ingénierie des systèmes d'information. Semestre d'échange à
-            l'Universidad Politécnica de Madrid.
-          </p>
-        </li>
       </ol>
-    </section>
-
-    <section class="section wrap" id="projects">
-      <div class="section-head reveal">
-        <h2>Travaux choisis</h2>
-      </div>
-      <div class="grid-2">
-        <article class="card reveal">
-          <div class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-4l-1 2h-4l-1-2H5a2 2 0 0 1-2-2V9Z"/><path d="M8 12h.01M16 12h.01"/></svg>
-          </div>
-          <h3><a href="https://www.uptale.io" rel="noopener" target="_blank">Plateforme Uptale</a></h3>
-          <p>
-            Comptes, intégrations et analytics du produit d'apprentissage immersif d'Uptale : le socle SaaS sur lequel
-            reposent les expériences Studio et Playtime, utilisé par de grandes organisations pour diffuser et suivre
-            des formations 360° et VR sur casques, navigateurs et plateformes LMS.
-          </p>
-          <div class="tag-row"><span class="tag">.NET</span><span class="tag">Azure</span><span class="tag">Terraform</span></div>
-        </article>
-
-        <article class="card reveal" data-delay="1">
-          <div class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 7.5v9L12 21l8-4.5v-9L12 3Z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></svg>
-          </div>
-          <h3><a href="https://github.com/ProgrammableMatterProject/VisibleSim" rel="noopener" target="_blank">VisibleSim</a></h3>
-          <p>
-            Simulateur open source en C++ pour robots modulaires et matière programmable. J'en ai dirigé le développement
-            pendant cinq ans, d'un prototype de recherche à un outil utilisé par des équipes en France, à Hong Kong et aux États-Unis.
-          </p>
-          <div class="tag-row"><span class="tag">C++</span><span class="tag">OpenGL</span><span class="tag">Open source</span></div>
-        </article>
-
-        <article class="card reveal" data-delay="1">
-          <div class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8.2 7.3l2.6 8.4M15.8 7.3l-2.6 8.4M8.5 6h7"/></svg>
-          </div>
-          <h3><a href="publications.html">Auto-reconfiguration par échafaudage</a></h3>
-          <p>
-            Ma recherche doctorale : une méthode déterministe et entièrement distribuée permettant à des essaims de
-            micro-modules rotatifs de construire l'échafaudage interne d'une forme puis de le recouvrir, réduisant le
-            temps de reconfiguration de plusieurs ordres de grandeur.
-          </p>
-          <div class="tag-row"><span class="tag">Algorithmes distribués</span><span class="tag">Robotique en essaim</span></div>
-        </article>
-
-        <article class="card reveal" data-delay="2">
-          <div class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"/></svg>
-          </div>
-          <h3><a href="https://www.cs.cmu.edu/~claytronics/" rel="noopener" target="_blank">Machine virtuelle Meld</a></h3>
-          <p>
-            Une machine virtuelle embarquée écrite en C pour Meld, le langage déclaratif du projet Claytronics à
-            Carnegie Mellon, afin d'exécuter des programmes logiques directement sur des modules robotiques aux ressources limitées.
-          </p>
-          <div class="tag-row"><span class="tag">C</span><span class="tag">Embarqué</span><span class="tag">Programmation logique</span></div>
-        </article>
-      </div>
     </section>
 
     <section class="section wrap" id="publications">
@@ -289,33 +232,6 @@
       </ol>
     </section>
 
-    <section class="section wrap" id="talks">
-      <div class="section-head reveal">
-        <h2>Interventions</h2>
-      </div>
-      <div class="reveal">
-        <h3 style="font-size:1.1rem;margin-bottom:.35rem">Soutenance de thèse</h3>
-        <p class="muted small" style="margin-bottom:1rem">
-          Enregistrée le 9 octobre 2020 à Montbéliard. La présentation commence à 22:45 ; les chapitres ci-dessous mènent directement à chaque partie.
-        </p>
-        <div class="video" id="defense-video" data-video="mNu0lyWhXHA" data-title="Soutenance de thèse de Pierre Thalamy">
-          <button class="video-facade" type="button" aria-label="Lire la vidéo de la soutenance">
-            <img src="https://i.ytimg.com/vi/mNu0lyWhXHA/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
-            <span class="play" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7L8 5Z"/></svg>
-            </span>
-          </button>
-        </div>
-        <ol class="chapters" data-chapters-for="defense-video">
-          <li><a href="https://youtu.be/mNu0lyWhXHA?t=1275" data-start="1275">Ouverture <time>21:15</time></a></li>
-          <li><a href="https://youtu.be/mNu0lyWhXHA?t=1365" data-start="1365">Présentation <time>22:45</time></a></li>
-          <li><a href="https://youtu.be/mNu0lyWhXHA?t=4467" data-start="4467">Questions du jury <time>1:14:27</time></a></li>
-          <li><a href="https://youtu.be/mNu0lyWhXHA?t=9555" data-start="9555">Retour du directeur <time>2:39:15</time></a></li>
-          <li><a href="https://youtu.be/mNu0lyWhXHA?t=11120" data-start="11120">Délibération <time>3:05:20</time></a></li>
-        </ol>
-      </div>
-    </section>
-
     <!-- ============ Hors du bureau ============ -->
     <section class="section wrap" id="about-teaser">
       <a class="teaser reveal" href="about.html">
@@ -335,6 +251,7 @@
     <div class="wrap row">
       <span>© <span data-year>2026</span> Pierre Thalamy</span>
       <nav aria-label="Pied de page">
+        <a href="about.html">À propos</a>
         <a href="publications.html">Publications</a>
         <a href="cv.html">CV</a>
         <a href="../" lang="en" hreflang="en">English</a>

@@ -74,12 +74,11 @@
       <section class="reveal">
         <h2>Profile</h2>
         <p class="muted">
-          Full-stack software engineer with eight years of experience across research and industry, strongest on
-          backend and cloud infrastructure. I lead the Platform &amp; Data team at Uptale, owning accounts,
-          integrations and analytics. I joined when it was an early-stage startup and grew with it into a scale-up,
-          and I'm the engineer colleagues from the other areas turn to on architecture, infrastructure and security
-          questions. I care about systems that are simple to operate, secure by default and pleasant to work in. PhD
-          in distributed algorithms for modular robotics.
+          Full-stack software engineer, working since 2017 across research and industry, strongest on backend and
+          cloud infrastructure. I lead the Platform &amp; Data team at Uptale, owning accounts, integrations and
+          analytics. I joined when it was an early-stage startup and grew with it into a scale-up. I care about
+          systems that are simple to operate, secure by default and pleasant to work in, and when the team hits
+          friction I build the tool that removes it. PhD in distributed algorithms for modular robotics.
         </p>
       </section>
 
@@ -90,13 +89,17 @@
           <div class="cv-when">Nov 2020 to present<small>Paris</small></div>
           <div>
             <h3>Lead Software Engineer, Platform &amp; Data</h3>
-            <div class="org"><a href="https://www.uptale.io" rel="noopener">Uptale</a>, immersive learning SaaS (360° and VR training for enterprises), 9 million euro fundraising in 2024</div>
-            <p>Joined in November 2020, when Uptale was an early-stage startup, and grew with the company through its shift to a fast-growing scale-up. Software Engineer, then Senior Software Engineer, then Lead of the Platform &amp; Data team since 2026, while remaining an individual contributor on the backend and infrastructure.</p>
+            <div class="org"><a href="https://www.uptale.io" rel="noopener">Uptale</a>, immersive learning SaaS (360° and VR training) used by more than 500 organisations including Airbus, Stellantis, TotalEnergies, L'Oréal, Sanofi and Siemens, 9 million euro fundraising in 2024</div>
+            <p>Joined in November 2020, when Uptale was an early-stage startup, and grew with the company through its shift to a fast-growing scale-up. Software Engineer, then Senior Software Engineer, then Lead of the Platform &amp; Data team since February 2026, while remaining an individual contributor on the backend and infrastructure.</p>
             <ul>
               <li>Own the Platform &amp; Data area end to end: accounts, integrations and analytics, from data model and API to the React and TypeScript front end.</li>
-              <li>Own its backend and cloud infrastructure: ASP.NET Core services on Azure, infrastructure as code with Terraform, CI/CD pipelines.</li>
+              <li>Scaled the platform from a few hundred training sessions a day in 2020 to tens of thousands today, past two million sessions delivered in total, on a backend that still has headroom.</li>
+              <li>Took a multi-tenant SaaS to private deployments: the same product now runs in customers' own Azure subscriptions and on premises inside restricted networks, from one shared codebase. Technical lead and first contact for those customers, from project to support.</li>
+              <li>Moved the infrastructure to code, Bicep first, then Terraform: production, a US peer region, a production-like staging and the dev environments all come from one codebase, with no drift between them.</li>
+              <li>Led the backend migration from ASP.NET MVC to ASP.NET Core and the edge migration from Application Gateway to Azure Front Door.</li>
+              <li>Brought backend and infrastructure into ISO 27001 compliance with the CTO and head of engineering, certified in November 2025, and have guarded their security since, including the remediation of each yearly penetration test.</li>
+              <li>Developer experience: CI/CD builds on virtual machine scale sets, faster pull request gates, automated dependency upgrades and branch merges, plus the coding guidelines and skills that developers and AI agents use every day.</li>
               <li>Lead the team: technical direction, code reviews and design discussions, mentoring, delivery planning with product.</li>
-              <li>Go-to engineer beyond the team on architecture, infrastructure, reliability and security topics, for a product used by large enterprise customers and integrated with their learning management systems.</li>
             </ul>
           </div>
         </div>
@@ -120,11 +123,7 @@
           <div>
             <h3>Software Engineer, graduation project</h3>
             <div class="org">Supralog, Intr@ssoc ERP software</div>
-            <ul>
-              <li>Designed and implemented a secure REST server infrastructure in C#.</li>
-              <li>Built a reactive Vue.js module for the ERP web application on top of that API.</li>
-              <li>Designed a cross-platform Xamarin mobile application providing the product's core features.</li>
-            </ul>
+            <p>Secure REST backend in C# for an ERP aimed at non-profit organisations, with a Vue.js web module and a cross-platform Xamarin mobile app on the same API.</p>
           </div>
         </div>
 
@@ -136,17 +135,6 @@
             <ul>
               <li>Brought VisibleSim from a pre-release state to its first stable version.</li>
               <li>Architectural overhaul, refactoring, documentation and new modules to support research.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="cv-entry">
-          <div class="cv-when">2015 to 2016, 4 months<small>Grenoble</small></div>
-          <div>
-            <h3>iOS Developer</h3>
-            <div class="org">NSigma junior enterprise, Grenoble INP - Ensimag</div>
-            <ul>
-              <li>Patches and updates on an iPad application for professional fluid-meter reading, in close collaboration with the client, Engie Cofely.</li>
             </ul>
           </div>
         </div>
@@ -268,6 +256,7 @@
     <div class="wrap row">
       <span>© <span data-year>2026</span> Pierre Thalamy</span>
       <nav aria-label="Footer">
+        <a href="about.html">About</a>
         <a href="publications.html">Publications</a>
         <a href="cv.html">CV</a>
         <a href="fr/cv.html" lang="fr" hreflang="fr">Français</a>

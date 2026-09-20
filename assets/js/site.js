@@ -87,6 +87,15 @@
     }
   });
 
+  /* Links to a collapsed <details> (for example the defense replay) open it before jumping. */
+  function openDetailsFromHash() {
+    if (!location.hash) return;
+    var target = document.getElementById(location.hash.slice(1));
+    if (target && target.tagName === 'DETAILS') target.open = true;
+  }
+  openDetailsFromHash();
+  window.addEventListener('hashchange', openDetailsFromHash);
+
   /* Copy BibTeX buttons. */
   document.querySelectorAll('[data-copy]').forEach(function (btn) {
     btn.addEventListener('click', function () {
