@@ -99,6 +99,10 @@
   <div class="group" id="themes">
     <span class="label">Theme</span>
   </div>
+
+  <div class="group" id="warms">
+    <span class="label">About page</span>
+  </div>
 </div>
 
 <div class="stage">
@@ -186,6 +190,9 @@ const params = new URLSearchParams(location.search);
 let variant = params.get('v') && VARIANTS[params.get('v')] ? params.get('v') : 'green';
 let page = PAGES.find(p => p.id === params.get('p')) ? params.get('p') : 'index';
 let mode = params.get('t') === 'dark' ? 'dark' : 'light';
+/* about.html carries .mood-warm, which defines its own terracotta accent and wins over :root.
+   Off (the default) is what a :root-only token change really does: About stays as it is today. */
+let warm = params.get('w') === '1';
 
 const frame = document.getElementById('frame');
 
@@ -223,6 +230,10 @@ function buildBar() {
 
   const tc = document.getElementById('themes');
   ['light', 'dark'].forEach(m => pill(tc, m, m === 'light' ? 'Light' : 'Dark', null, m === mode, () => { mode = m; sync(true); }));
+
+  const wc = document.getElementById('warms');
+  [['0', 'Keep terracotta'], ['1', 'Retint']].forEach(([k, label]) =>
+    pill(wc, k, label, null, k === (warm ? '1' : '0'), () => { warm = k === '1'; sync(); }));
 }
 
 function pressed(containerId, key) {
@@ -249,12 +260,15 @@ function injectInto(doc, v) {
     ? `.brand .mark { background: transparent !important; overflow: hidden; padding: 0; }
        .brand .mark img { width: 100%; height: 100%; border-radius: 8px; display: block; object-fit: cover; }`
     : '';
-  style.textContent = `:root, :root[data-theme="light"], :root[data-theme="dark"] {
-      --accent: ${t.accent};
+  const tokens = `--accent: ${t.accent};
       --accent-strong: ${t.strong};
       --accent-soft: ${t.soft};
-      --accent-text: ${t.text};
+      --accent-text: ${t.text};`;
+  const not = warm ? '' : ':not(.mood-warm)';
+  style.textContent = `:root${not}, :root[data-theme="light"]${not}, :root[data-theme="dark"]${not} {
+      ${tokens}
     }
+    ${warm ? `:root.mood-warm, :root[data-theme="dark"].mood-warm { ${tokens} }` : ''}
     ${markCss}
     ${v.extra || ''}`;
 
@@ -305,7 +319,7 @@ function renderSide(v) {
 function sync(reload) {
   const v = VARIANTS[variant];
   const p = PAGES.find(x => x.id === page);
-  pressed('variants', variant); pressed('pages', page); pressed('themes', mode);
+  pressed('variants', variant); pressed('pages', page); pressed('themes', mode); pressed('warms', warm ? '1' : '0');
   document.getElementById('urlText').textContent = p.url;
   document.getElementById('tabTitle').textContent = p.label === 'Home' ? 'Pierre Thalamy' : p.label + ' - Pierre Thalamy';
   renderSide(v);
@@ -316,7 +330,7 @@ function sync(reload) {
   if (reload || frame.src !== want) { frame.src = want; }
   else if (frame.contentDocument) { injectInto(frame.contentDocument, v); }
 
-  const q = new URLSearchParams({ v: variant, p: page, t: mode });
+  const q = new URLSearchParams({ v: variant, p: page, t: mode, w: warm ? '1' : '0' });
   history.replaceState(null, '', '?' + q);
 }
 
