@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Logo &amp; accent preview</title>
+<title>Accent preview</title>
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -86,10 +86,14 @@
 <body>
 
 <div class="bar">
-  <h1>Logo &amp; accent preview</h1>
+  <h1>Accent preview</h1>
 
   <div class="group" id="variants">
-    <span class="label">Logo</span>
+    <span class="label">Professional</span>
+  </div>
+
+  <div class="group" id="personals">
+    <span class="label">Personal</span>
   </div>
 
   <div class="group" id="pages">
@@ -98,10 +102,6 @@
 
   <div class="group" id="themes">
     <span class="label">Theme</span>
-  </div>
-
-  <div class="group" id="warms">
-    <span class="label">About page</span>
   </div>
 </div>
 
@@ -141,58 +141,49 @@
 
 <script>
 const VARIANTS = {
-  current: {
-    name: 'Current',
-    logo: null,
-    swatch: '#0e6f8a',
+  current:  { name: 'Teal (today)', swatch: '#0e6f8a',
     light: { accent: '#0e6f8a', strong: '#0a5a70', soft: '#e2f1f5', text: '#0a5a70' },
-    dark:  { accent: '#5cc3dc', strong: '#86d4e6', soft: '#14303a', text: '#86d4e6' }
-  },
-  green: {
-    name: 'Green',
-    logo: '../images/logo-green.png',
-    swatch: '#12703f',
+    dark:  { accent: '#5cc3dc', strong: '#86d4e6', soft: '#14303a', text: '#86d4e6' } },
+  indigo:   { name: 'Indigo ink', swatch: '#414ea8',
+    light: { accent: '#414ea8', strong: '#333f8c', soft: '#e7e9fa', text: '#333f8c' },
+    dark:  { accent: '#97a6f5', strong: '#b6c0ff', soft: '#1b2145', text: '#b6c0ff' } },
+  plum:     { name: 'Plum', swatch: '#7a3382',
+    light: { accent: '#7a3382', strong: '#63256a', soft: '#f5e6f5', text: '#63256a' },
+    dark:  { accent: '#d79fe0', strong: '#e7bdee', soft: '#2e1b33', text: '#e7bdee' } },
+  forest:   { name: 'Forest', swatch: '#12703f',
     light: { accent: '#12703f', strong: '#0c5730', soft: '#e4f2e8', text: '#0c5730' },
-    dark:  { accent: '#4fc285', strong: '#7ddaa4', soft: '#12301f', text: '#7ddaa4' }
-  },
-  amber: {
-    name: 'Amber',
-    logo: '../images/logo-amber.png',
-    swatch: '#8a6200',
-    light: { accent: '#8a6200', strong: '#6f4e00', soft: '#fbf0cf', text: '#6f4e00' },
-    dark:  { accent: '#f3c33f', strong: '#ffd76a', soft: '#3a2c06', text: '#ffd76a' }
-  },
-  'amber-vivid': {
-    name: 'Amber vivid',
-    logo: '../images/logo-amber.png',
-    swatch: '#f5b301',
-    light: { accent: '#f5b301', strong: '#d99b00', soft: '#fdf1cf', text: '#7a5600' },
-    dark:  { accent: '#f5b301', strong: '#ffd76a', soft: '#3a2c06', text: '#f3c33f' },
-    /* vivid yellow cannot carry white text, so accent surfaces get near-black ink */
-    extra: '.btn.is-primary, .btn.is-primary:hover, .skip-link, .mood-warm .brand .mark { color: #241a00 !important; }'
-  },
-  orange: {
-    name: 'Orange',
-    logo: '../images/logo-orange.png',
-    swatch: '#bd400d',
-    light: { accent: '#bd400d', strong: '#96320a', soft: '#fdeade', text: '#96320a' },
-    dark:  { accent: '#fb8b4f', strong: '#ffab78', soft: '#3a1a0c', text: '#ffab78' }
-  }
+    dark:  { accent: '#4fc285', strong: '#7ddaa4', soft: '#12301f', text: '#7ddaa4' } },
+  graphite: { name: 'Graphite', swatch: '#3a3f46',
+    light: { accent: '#3a3f46', strong: '#24282d', soft: '#ecedef', text: '#24282d' },
+    dark:  { accent: '#c2c8d1', strong: '#dfe3e8', soft: '#262a30', text: '#dfe3e8' } }
 };
+
+/* The personal side: about.html carries .mood-warm, which sets its own accent over :root. */
+const PERSONAL = {
+  orange:    { name: 'Orange', swatch: '#bd400d',
+    light: { accent: '#bd400d', strong: '#96320a', soft: '#f7e2d6', text: '#96320a' },
+    dark:  { accent: '#fb8b4f', strong: '#ffab78', soft: '#3f2a1c', text: '#ffab78' } },
+  terracotta:{ name: 'Terracotta (today)', swatch: '#c2652d',
+    light: { accent: '#c2652d', strong: '#a5511f', soft: '#f6e3d3', text: '#a5511f' },
+    dark:  { accent: '#e0905b', strong: '#eaa374', soft: '#3a2418', text: '#eaa374' } }
+};
+
+const LOGO = '../images/logo-orange.png';
+
 const PAGES = [
-  { id: 'index',        label: 'Home',         src: '../index.html',        url: 'pthalamy.github.io' },
-  { id: 'about',        label: 'About',        src: '../about.html',        url: 'pthalamy.github.io/about' },
-  { id: 'publications', label: 'Publications', src: '../publications.html', url: 'pthalamy.github.io/publications' },
-  { id: 'cv',           label: 'CV',           src: '../cv.html',           url: 'pthalamy.github.io/cv' }
+  { id: 'index',        label: 'Home',         src: '../index.html',        url: 'pthalamy.github.io',              zone: 'pro' },
+  { id: 'publications', label: 'Publications', src: '../publications.html', url: 'pthalamy.github.io/publications', zone: 'pro' },
+  { id: 'cv',           label: 'CV',           src: '../cv.html',           url: 'pthalamy.github.io/cv',           zone: 'pro' },
+  { id: 'about',        label: 'About',        src: '../about.html',        url: 'pthalamy.github.io/about',        zone: 'personal' }
 ];
 
 const params = new URLSearchParams(location.search);
-let variant = params.get('v') && VARIANTS[params.get('v')] ? params.get('v') : 'green';
+let variant = params.get('v') && VARIANTS[params.get('v')] ? params.get('v') : 'indigo';
 let page = PAGES.find(p => p.id === params.get('p')) ? params.get('p') : 'index';
 let mode = params.get('t') === 'dark' ? 'dark' : 'light';
 /* about.html carries .mood-warm, which defines its own terracotta accent and wins over :root.
    Off (the default) is what a :root-only token change really does: About stays as it is today. */
-let warm = params.get('w') === '1';
+let personal = PERSONAL[params.get('w')] ? params.get('w') : 'orange';
 
 const frame = document.getElementById('frame');
 
@@ -219,10 +210,9 @@ function pill(container, key, label, media, active, onClick) {
 function buildBar() {
   const vc = document.getElementById('variants');
   Object.entries(VARIANTS).forEach(([key, v]) => {
-    let media;
-    if (v.logo) { media = document.createElement('img'); media.src = v.logo; media.alt = ''; }
-    else { media = document.createElement('span'); media.className = 'dot'; media.style.background = v.swatch; }
-    pill(vc, key, v.name, media, key === variant, () => { variant = key; sync(); });
+    const dot = document.createElement('span');
+    dot.className = 'dot'; dot.style.background = v.swatch;
+    pill(vc, key, v.name, dot, key === variant, () => { variant = key; sync(); });
   });
 
   const pc = document.getElementById('pages');
@@ -231,9 +221,12 @@ function buildBar() {
   const tc = document.getElementById('themes');
   ['light', 'dark'].forEach(m => pill(tc, m, m === 'light' ? 'Light' : 'Dark', null, m === mode, () => { mode = m; sync(true); }));
 
-  const wc = document.getElementById('warms');
-  [['0', 'Keep terracotta'], ['1', 'Retint']].forEach(([k, label]) =>
-    pill(wc, k, label, null, k === (warm ? '1' : '0'), () => { warm = k === '1'; sync(); }));
+  const wc = document.getElementById('personals');
+  Object.entries(PERSONAL).forEach(([key, p]) => {
+    const dot = document.createElement('span');
+    dot.className = 'dot'; dot.style.background = p.swatch;
+    pill(wc, key, p.name, dot, key === personal, () => { personal = key; sync(); });
+  });
 }
 
 function pressed(containerId, key) {
@@ -242,100 +235,93 @@ function pressed(containerId, key) {
   });
 }
 
-function tokenCss(v) {
-  const L = v.light, D = v.dark;
-  const block = t => `  --accent: ${t.accent};\n  --accent-strong: ${t.strong};\n  --accent-soft: ${t.soft};\n  --accent-text: ${t.text};`;
-  return `:root {\n${block(L)}\n}\n\n:root[data-theme="dark"] {\n${block(D)}\n}\n\n@media (prefers-color-scheme: dark) {\n  :root:not([data-theme="light"]) {\n  ${block(D).trim()}\n  }\n}`;
+function tokenBlock(t, indent) {
+  const p = ' '.repeat(indent);
+  return `${p}--accent: ${t.accent};\n${p}--accent-strong: ${t.strong};\n${p}--accent-soft: ${t.soft};\n${p}--accent-text: ${t.text};`;
 }
 
-function injectInto(doc, v) {
-  const t = v[mode];
+/* The real diff: :root carries the professional accent, .mood-warm the personal one. */
+function tokenCss(v, pv) {
+  return [
+    ':root {', tokenBlock(v.light, 2), '}', '',
+    ':root[data-theme="dark"] {', tokenBlock(v.dark, 2), '}', '',
+    '.mood-warm {', tokenBlock(pv.light, 2), '}', '',
+    ':root[data-theme="dark"].mood-warm {', tokenBlock(pv.dark, 2), '}'
+  ].join('\n');
+}
+
+function injectInto(doc, v, pv) {
   let style = doc.getElementById('preview-variant');
   if (!style) {
     style = doc.createElement('style');
     style.id = 'preview-variant';
     doc.head.appendChild(style);
   }
-  const markCss = v.logo
-    ? `.brand .mark { background: transparent !important; overflow: hidden; padding: 0; }
-       .brand .mark img { width: 100%; height: 100%; border-radius: 8px; display: block; object-fit: cover; }`
-    : '';
-  const tokens = `--accent: ${t.accent};
-      --accent-strong: ${t.strong};
-      --accent-soft: ${t.soft};
-      --accent-text: ${t.text};`;
-  const not = warm ? '' : ':not(.mood-warm)';
-  style.textContent = `:root${not}, :root[data-theme="light"]${not}, :root[data-theme="dark"]${not} {
-      ${tokens}
-    }
-    ${warm ? `:root.mood-warm, :root[data-theme="dark"].mood-warm { ${tokens} }` : ''}
-    ${markCss}
-    ${v.extra || ''}`;
+  const t = v[mode], pt = pv[mode];
+  const decl = x => `--accent: ${x.accent}; --accent-strong: ${x.strong}; --accent-soft: ${x.soft}; --accent-text: ${x.text};`;
+  style.textContent = `
+    :root:not(.mood-warm), :root[data-theme="light"]:not(.mood-warm), :root[data-theme="dark"]:not(.mood-warm) { ${decl(t)} }
+    :root.mood-warm, :root[data-theme="dark"].mood-warm { ${decl(pt)} }
+    .brand .mark { background: transparent !important; overflow: hidden; padding: 0; }
+    .brand .mark img { width: 100%; height: 100%; border-radius: 8px; display: block; object-fit: cover; }`;
 
   const mark = doc.querySelector('.brand .mark');
   if (mark) {
-    if (v.logo) {
-      let img = mark.querySelector('img');
-      if (!img) { mark.textContent = ''; img = doc.createElement('img'); img.alt = ''; mark.appendChild(img); }
-      img.src = new URL(v.logo, location.href).href;
-    } else if (mark.querySelector('img')) {
-      mark.textContent = 'PT';
-    }
+    let img = mark.querySelector('img');
+    if (!img) { mark.textContent = ''; img = doc.createElement('img'); img.alt = ''; mark.appendChild(img); }
+    img.src = new URL(LOGO, location.href).href;
   }
-
   const icon = doc.querySelector('link[rel="icon"]');
-  if (icon && v.logo) icon.href = new URL(v.logo, location.href).href;
+  if (icon) icon.href = new URL(LOGO, location.href).href;
 
   doc.documentElement.setAttribute('data-theme', mode);
 }
 
-function renderSide(v) {
-  const t = v[mode];
-  document.getElementById('tokMode').textContent = '(' + mode + ')';
-  const rows = [
-    ['--accent', t.accent, 'buttons, mark, focus ring'],
-    ['--accent-strong', t.strong, 'hover / pressed'],
-    ['--accent-soft', t.soft, 'tag and badge fills'],
-    ['--accent-text', t.text, 'links and eyebrows']
-  ];
+function renderSide(v, pv) {
+  const p = PAGES.find(x => x.id === page);
+  const shown = p.zone === 'personal' ? pv : v;
+  const t = shown[mode];
+  document.getElementById('tokMode').textContent =
+    `(${mode} — ${p.zone === 'personal' ? 'personal' : 'professional'})`;
   const box = document.getElementById('tokens');
   box.innerHTML = '';
-  rows.forEach(([name, hex, use]) => {
+  [['--accent', t.accent, 'buttons, mark, focus ring'],
+   ['--accent-strong', t.strong, 'hover / pressed'],
+   ['--accent-soft', t.soft, 'tag and badge fills'],
+   ['--accent-text', t.text, 'links and eyebrows']].forEach(([name, hex, use]) => {
     const row = document.createElement('div');
     row.className = 'tok';
     row.innerHTML = `<span class="sw" style="background:${hex}"></span><span><b>${hex}</b> <code>${name}</code><br><code>${use}</code></span>`;
     box.appendChild(row);
   });
 
-  const icon = v.logo || '../images/favicon.svg';
-  ['s16', 's32', 's64', 's180'].forEach(id => { document.getElementById(id).src = icon; });
-  document.getElementById('tabFav').src = icon;
+  ['s16', 's32', 's64', 's180'].forEach(id => { document.getElementById(id).src = LOGO; });
+  document.getElementById('tabFav').src = LOGO;
   document.getElementById('snippet').textContent =
-    '/* assets/css/site.css */\n' + tokenCss(v) +
-    (v.extra ? '\n\n' + v.extra.replace(/; /g, ';\n') : '') +
-    (v.logo ? `\n\n<!-- every page head -->\n<link rel="icon" href="images/${v.logo.split('/').pop()}" type="image/png">\n<link rel="apple-touch-icon" href="images/${v.logo.split('/').pop()}">` : '');
+    '/* assets/css/site.css */\n' + tokenCss(v, pv) +
+    `\n\n<!-- every page head -->\n<link rel="icon" href="images/${LOGO.split('/').pop()}" type="image/png">\n<link rel="apple-touch-icon" href="images/${LOGO.split('/').pop()}">`;
 }
 
 function sync(reload) {
-  const v = VARIANTS[variant];
+  const v = VARIANTS[variant], pv = PERSONAL[personal];
   const p = PAGES.find(x => x.id === page);
-  pressed('variants', variant); pressed('pages', page); pressed('themes', mode); pressed('warms', warm ? '1' : '0');
+  pressed('variants', variant); pressed('pages', page); pressed('themes', mode); pressed('personals', personal);
   document.getElementById('urlText').textContent = p.url;
   document.getElementById('tabTitle').textContent = p.label === 'Home' ? 'Pierre Thalamy' : p.label + ' - Pierre Thalamy';
-  renderSide(v);
+  renderSide(v, pv);
 
   try { localStorage.setItem('theme', mode); } catch (e) {}
 
   const want = new URL(p.src, location.href).href;
   if (reload || frame.src !== want) { frame.src = want; }
-  else if (frame.contentDocument) { injectInto(frame.contentDocument, v); }
+  else if (frame.contentDocument) { injectInto(frame.contentDocument, v, pv); }
 
-  const q = new URLSearchParams({ v: variant, p: page, t: mode, w: warm ? '1' : '0' });
+  const q = new URLSearchParams({ v: variant, p: page, t: mode, w: personal });
   history.replaceState(null, '', '?' + q);
 }
 
 frame.addEventListener('load', () => {
-  try { injectInto(frame.contentDocument, VARIANTS[variant]); } catch (e) {}
+  try { injectInto(frame.contentDocument, VARIANTS[variant], PERSONAL[personal]); } catch (e) {}
 });
 
 buildBar();
