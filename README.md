@@ -21,7 +21,7 @@ them through `media.githubusercontent.com`, which GitHub Pages cannot serve dire
 
 ## Editing content
 
-* Text that still needs Pierre's review is marked with `TODO(Pierre)` comments in the HTML.
+* Text that still needs Pierre's review can be marked with `TODO(Pierre)` comments in the HTML.
 * Keep the English and French pages in sync: `fr/*.html` mirror the root pages one to one.
 * To add a paper, copy one `<article class="pub pub-full">` block in `publications.html` and its French twin,
   drop the PDF in `papers/`, a 480 px wide WebP thumbnail in `papers/thumbnails/` and the `.bib` in `papers/bib/`.
