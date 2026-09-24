@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accent preview</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --ui-bg: #14161a;
+    --ui-panel: #1c1f24;
+    --ui-line: #2b3037;
+    --ui-text: #e9e9e6;
+    --ui-text-2: #9aa0a8;
+    --ui-pill: #262a31;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--ui-bg); color: var(--ui-text);
+    font: 15px/1.5 "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .bar {
+    display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem;
+    padding: .85rem 1.25rem; border-bottom: 1px solid var(--ui-line); background: var(--ui-panel);
+    position: sticky; top: 0; z-index: 10;
+  }
+  .bar h1 { font-size: .95rem; margin: 0 .5rem 0 0; font-weight: 600; letter-spacing: -.01em; }
+  .group { display: flex; align-items: center; gap: .4rem; }
+  .group > .label { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--ui-text-2); margin-right: .15rem; }
+  button.pill {
+    display: inline-flex; align-items: center; gap: .45rem;
+    background: var(--ui-pill); color: var(--ui-text); border: 1px solid transparent;
+    border-radius: 999px; padding: .35rem .7rem; font: inherit; font-size: .85rem; cursor: pointer;
+    transition: background .15s, border-color .15s, transform .15s;
+  }
+  button.pill:hover { background: #30353d; }
+  button.pill:active { transform: scale(.97); }
+  button.pill[aria-pressed="true"] { border-color: currentColor; background: #30353d; }
+  button.pill .dot { width: .8rem; height: .8rem; border-radius: 4px; box-shadow: inset 0 0 0 1px rgba(255,255,255,.18); }
+  button.pill img { width: 1.05rem; height: 1.05rem; border-radius: 4px; display: block; }
+
+  .stage { padding: 1.25rem; display: grid; grid-template-columns: minmax(0, 1fr) 17rem; gap: 1.25rem; align-items: start; }
+  @media (max-width: 950px) { .stage { grid-template-columns: minmax(0, 1fr); } }
+
+  /* Fake browser chrome so the favicon is visible at real size */
+  .browser { border: 1px solid var(--ui-line); border-radius: 12px; overflow: hidden; background: #20242a; box-shadow: 0 24px 60px -30px #000; }
+  .chrome { display: flex; align-items: flex-end; gap: .6rem; padding: .5rem .75rem 0; background: #2a2f36; }
+  .dots { display: flex; gap: .35rem; padding-bottom: .55rem; }
+  .dots i { width: .6rem; height: .6rem; border-radius: 50%; background: #4a515a; display: block; }
+  .tab {
+    display: flex; align-items: center; gap: .5rem; background: #1b1e23; color: #cfd4da;
+    padding: .45rem .8rem; border-radius: 8px 8px 0 0; font-size: .8rem; max-width: 18rem;
+  }
+  .tab .fav { width: 16px; height: 16px; border-radius: 3px; flex: none; }
+  .tab .ttl { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .urlbar { padding: .5rem .75rem; background: #1b1e23; border-bottom: 1px solid var(--ui-line); }
+  .urlbar span { display: block; background: #2a2f36; border-radius: 999px; padding: .3rem .8rem; font-size: .78rem; color: var(--ui-text-2); }
+  iframe { width: 100%; height: 78vh; min-height: 520px; border: 0; display: block; background: #fff; }
+
+  .side { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .card { border: 1px solid var(--ui-line); border-radius: 12px; background: var(--ui-panel); padding: 1rem; min-width: 0; }
+  .card h2 { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--ui-text-2); margin: 0 0 .75rem; font-weight: 600; }
+  .icons { display: flex; align-items: flex-end; flex-wrap: wrap; gap: .9rem; }
+  .icons figure { margin: 0; text-align: center; }
+  .icons img { border-radius: 6px; display: block; margin: 0 auto .35rem; image-rendering: auto; }
+  .icons figcaption { font-size: .68rem; color: var(--ui-text-2); }
+  .tokens { display: grid; gap: .4rem; }
+  .tok { display: flex; align-items: center; gap: .6rem; font-size: .78rem; min-width: 0; }
+  .tok > span:last-child { min-width: 0; overflow-wrap: anywhere; }
+  .tok .sw { width: 1.6rem; height: 1.6rem; border-radius: 6px; border: 1px solid rgba(255,255,255,.12); flex: none; }
+  .tok code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .72rem; color: var(--ui-text-2); }
+  .tok b { font-weight: 500; }
+  .note { font-size: .78rem; color: var(--ui-text-2); }
+  pre.snippet {
+    margin: .6rem 0 0; padding: .7rem; background: #0f1215; border: 1px solid var(--ui-line); border-radius: 8px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .68rem; line-height: 1.5;
+    color: #cfd4da; overflow: auto; max-height: 15rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <h1>Accent preview</h1>
+
+  <div class="group" id="variants">
+    <span class="label">Professional</span>
+  </div>
+
+  <div class="group" id="personals">
+    <span class="label">Personal</span>
+  </div>
+
+  <div class="group" id="pages">
+    <span class="label">Page</span>
+  </div>
+
+  <div class="group" id="themes">
+    <span class="label">Theme</span>
+  </div>
+</div>
+
+<div class="stage">
+  <div class="browser">
+    <div class="chrome">
+      <div class="dots"><i></i><i></i><i></i></div>
+      <div class="tab"><img class="fav" id="tabFav" alt=""><span class="ttl" id="tabTitle">Pierre Thalamy</span></div>
+    </div>
+    <div class="urlbar"><span id="urlText">pthalamy.github.io</span></div>
+    <iframe id="frame" title="Site preview"></iframe>
+  </div>
+
+  <div class="side">
+    <div class="card">
+      <h2>Icon at real sizes</h2>
+      <div class="icons">
+        <figure><img id="s16" width="16" height="16" alt=""><figcaption>16px tab</figcaption></figure>
+        <figure><img id="s32" width="32" height="32" alt=""><figcaption>32px</figcaption></figure>
+        <figure><img id="s64" width="64" height="64" alt=""><figcaption>64px</figcaption></figure>
+        <figure><img id="s180" width="80" height="80" alt=""><figcaption>home screen</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Accent tokens <span id="tokMode"></span></h2>
+      <div class="tokens" id="tokens"></div>
+      <p class="note" style="margin:.8rem 0 0">Same four tokens the site already uses — nothing else in the CSS changes.</p>
+    </div>
+
+    <div class="card">
+      <h2>Diff to apply this variant</h2>
+      <pre class="snippet" id="snippet"></pre>
+    </div>
+  </div>
+</div>
+
+<script>
+const VARIANTS = {
+  current:  { name: 'Teal (former)', swatch: '#0e6f8a',
+    light: { accent: '#0e6f8a', strong: '#0a5a70', soft: '#e2f1f5', text: '#0a5a70' },
+    dark:  { accent: '#5cc3dc', strong: '#86d4e6', soft: '#14303a', text: '#86d4e6' } },
+  indigo:   { name: 'Indigo ink (live)', swatch: '#414ea8',
+    light: { accent: '#414ea8', strong: '#333f8c', soft: '#e7e9fa', text: '#333f8c' },
+    dark:  { accent: '#97a6f5', strong: '#b6c0ff', soft: '#1b2145', text: '#b6c0ff' } },
+  plum:     { name: 'Plum', swatch: '#7a3382',
+    light: { accent: '#7a3382', strong: '#63256a', soft: '#f5e6f5', text: '#63256a' },
+    dark:  { accent: '#d79fe0', strong: '#e7bdee', soft: '#2e1b33', text: '#e7bdee' } },
+  forest:   { name: 'Forest', swatch: '#12703f',
+    light: { accent: '#12703f', strong: '#0c5730', soft: '#e4f2e8', text: '#0c5730' },
+    dark:  { accent: '#4fc285', strong: '#7ddaa4', soft: '#12301f', text: '#7ddaa4' } },
+  graphite: { name: 'Graphite', swatch: '#3a3f46',
+    light: { accent: '#3a3f46', strong: '#24282d', soft: '#ecedef', text: '#24282d' },
+    dark:  { accent: '#c2c8d1', strong: '#dfe3e8', soft: '#262a30', text: '#dfe3e8' } }
+};
+
+/* The personal side: about.html carries .mood-warm, which sets its own accent over :root. */
+const PERSONAL = {
+  orange:    { name: 'Orange (live)', swatch: '#bd400d',
+    light: { accent: '#bd400d', strong: '#96320a', soft: '#f7e2d6', text: '#96320a' },
+    dark:  { accent: '#fb8b4f', strong: '#ffab78', soft: '#3f2a1c', text: '#ffab78' } },
+  terracotta:{ name: 'Terracotta (former)', swatch: '#c2652d',
+    light: { accent: '#c2652d', strong: '#a5511f', soft: '#f6e3d3', text: '#a5511f' },
+    dark:  { accent: '#e0905b', strong: '#eaa374', soft: '#3a2418', text: '#eaa374' } }
+};
+
+const LOGO = '../images/logo-orange.png';
+
+const PAGES = [
+  { id: 'index',        label: 'Home',         src: '../index.html',        url: 'pthalamy.github.io',              zone: 'pro' },
+  { id: 'publications', label: 'Publications', src: '../publications.html', url: 'pthalamy.github.io/publications', zone: 'pro' },
+  { id: 'cv',           label: 'CV',           src: '../cv.html',           url: 'pthalamy.github.io/cv',           zone: 'pro' },
+  { id: 'about',        label: 'About',        src: '../about.html',        url: 'pthalamy.github.io/about',        zone: 'personal' }
+];
+
+const params = new URLSearchParams(location.search);
+let variant = params.get('v') && VARIANTS[params.get('v')] ? params.get('v') : 'indigo';
+let page = PAGES.find(p => p.id === params.get('p')) ? params.get('p') : 'index';
+let mode = params.get('t') === 'dark' ? 'dark' : 'light';
+/* about.html carries .mood-warm, which defines its own terracotta accent and wins over :root.
+   Off (the default) is what a :root-only token change really does: About stays as it is today. */
+let personal = PERSONAL[params.get('w')] ? params.get('w') : 'orange';
+
+const frame = document.getElementById('frame');
+
+/* The site reads localStorage['theme'] in its head; keep the visitor's own choice and restore it. */
+let savedTheme = null;
+try { savedTheme = localStorage.getItem('theme'); } catch (e) {}
+addEventListener('beforeunload', () => {
+  try { savedTheme === null ? localStorage.removeItem('theme') : localStorage.setItem('theme', savedTheme); } catch (e) {}
+});
+
+function pill(container, key, label, media, active, onClick) {
+  const b = document.createElement('button');
+  b.className = 'pill';
+  b.type = 'button';
+  b.dataset.key = key;
+  b.setAttribute('aria-pressed', String(active));
+  if (media) b.appendChild(media);
+  b.appendChild(document.createTextNode(label));
+  b.addEventListener('click', onClick);
+  container.appendChild(b);
+  return b;
+}
+
+function buildBar() {
+  const vc = document.getElementById('variants');
+  Object.entries(VARIANTS).forEach(([key, v]) => {
+    const dot = document.createElement('span');
+    dot.className = 'dot'; dot.style.background = v.swatch;
+    pill(vc, key, v.name, dot, key === variant, () => { variant = key; sync(); });
+  });
+
+  const pc = document.getElementById('pages');
+  PAGES.forEach(p => pill(pc, p.id, p.label, null, p.id === page, () => { page = p.id; sync(true); }));
+
+  const tc = document.getElementById('themes');
+  ['light', 'dark'].forEach(m => pill(tc, m, m === 'light' ? 'Light' : 'Dark', null, m === mode, () => { mode = m; sync(true); }));
+
+  const wc = document.getElementById('personals');
+  Object.entries(PERSONAL).forEach(([key, p]) => {
+    const dot = document.createElement('span');
+    dot.className = 'dot'; dot.style.background = p.swatch;
+    pill(wc, key, p.name, dot, key === personal, () => { personal = key; sync(); });
+  });
+}
+
+function pressed(containerId, key) {
+  document.querySelectorAll('#' + containerId + ' .pill').forEach(b => {
+    b.setAttribute('aria-pressed', String(b.dataset.key === key));
+  });
+}
+
+function tokenBlock(t, indent) {
+  const p = ' '.repeat(indent);
+  return `${p}--accent: ${t.accent};\n${p}--accent-strong: ${t.strong};\n${p}--accent-soft: ${t.soft};\n${p}--accent-text: ${t.text};`;
+}
+
+/* The real diff: :root carries the professional accent, .mood-warm the personal one. */
+function tokenCss(v, pv) {
+  return [
+    ':root {', tokenBlock(v.light, 2), '}', '',
+    ':root[data-theme="dark"] {', tokenBlock(v.dark, 2), '}', '',
+    '.mood-warm {', tokenBlock(pv.light, 2), '}', '',
+    ':root[data-theme="dark"].mood-warm {', tokenBlock(pv.dark, 2), '}'
+  ].join('\n');
+}
+
+function injectInto(doc, v, pv) {
+  let style = doc.getElementById('preview-variant');
+  if (!style) {
+    style = doc.createElement('style');
+    style.id = 'preview-variant';
+    doc.head.appendChild(style);
+  }
+  const t = v[mode], pt = pv[mode];
+  const decl = x => `--accent: ${x.accent}; --accent-strong: ${x.strong}; --accent-soft: ${x.soft}; --accent-text: ${x.text};`;
+  style.textContent = `
+    :root:not(.mood-warm), :root[data-theme="light"]:not(.mood-warm), :root[data-theme="dark"]:not(.mood-warm) { ${decl(t)} }
+    :root.mood-warm, :root[data-theme="dark"].mood-warm { ${decl(pt)} }
+    .brand .mark { background: transparent !important; overflow: hidden; padding: 0; }
+    .brand .mark img { width: 100%; height: 100%; border-radius: 8px; display: block; object-fit: cover; }`;
+
+  const mark = doc.querySelector('.brand .mark');
+  if (mark) {
+    let img = mark.querySelector('img');
+    if (!img) { mark.textContent = ''; img = doc.createElement('img'); img.alt = ''; mark.appendChild(img); }
+    img.src = new URL(LOGO, location.href).href;
+  }
+  const icon = doc.querySelector('link[rel="icon"]');
+  if (icon) icon.href = new URL(LOGO, location.href).href;
+
+  doc.documentElement.setAttribute('data-theme', mode);
+}
+
+function renderSide(v, pv) {
+  const p = PAGES.find(x => x.id === page);
+  const shown = p.zone === 'personal' ? pv : v;
+  const t = shown[mode];
+  document.getElementById('tokMode').textContent =
+    `(${mode} — ${p.zone === 'personal' ? 'personal' : 'professional'})`;
+  const box = document.getElementById('tokens');
+  box.innerHTML = '';
+  [['--accent', t.accent, 'buttons, mark, focus ring'],
+   ['--accent-strong', t.strong, 'hover / pressed'],
+   ['--accent-soft', t.soft, 'tag and badge fills'],
+   ['--accent-text', t.text, 'links and eyebrows']].forEach(([name, hex, use]) => {
+    const row = document.createElement('div');
+    row.className = 'tok';
+    row.innerHTML = `<span class="sw" style="background:${hex}"></span><span><b>${hex}</b> <code>${name}</code><br><code>${use}</code></span>`;
+    box.appendChild(row);
+  });
+
+  ['s16', 's32', 's64', 's180'].forEach(id => { document.getElementById(id).src = LOGO; });
+  document.getElementById('tabFav').src = LOGO;
+  document.getElementById('snippet').textContent =
+    '/* assets/css/site.css */\n' + tokenCss(v, pv) +
+    `\n\n<!-- every page head -->\n<link rel="icon" href="images/${LOGO.split('/').pop()}" type="image/png">\n<link rel="apple-touch-icon" href="images/${LOGO.split('/').pop()}">`;
+}
+
+function sync(reload) {
+  const v = VARIANTS[variant], pv = PERSONAL[personal];
+  const p = PAGES.find(x => x.id === page);
+  pressed('variants', variant); pressed('pages', page); pressed('themes', mode); pressed('personals', personal);
+  document.getElementById('urlText').textContent = p.url;
+  document.getElementById('tabTitle').textContent = p.label === 'Home' ? 'Pierre Thalamy' : p.label + ' - Pierre Thalamy';
+  renderSide(v, pv);
+
+  try { localStorage.setItem('theme', mode); } catch (e) {}
+
+  const want = new URL(p.src, location.href).href;
+  if (reload || frame.src !== want) { frame.src = want; }
+  else if (frame.contentDocument) { injectInto(frame.contentDocument, v, pv); }
+
+  const q = new URLSearchParams({ v: variant, p: page, t: mode, w: personal });
+  history.replaceState(null, '', '?' + q);
+}
+
+frame.addEventListener('load', () => {
+  try { injectInto(frame.contentDocument, VARIANTS[variant], PERSONAL[personal]); } catch (e) {}
+});
+
+buildBar();
+sync(true);
+</script>
+</body>
+</html>
